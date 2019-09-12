@@ -1,24 +1,43 @@
 \documentclass[12pt,a4paper,british]{article}
+\usepackage{etex}
 \usepackage{mathptmx}
 \renewcommand{\familydefault}{\rmdefault}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
-\usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage[protrusion=true,expansion]{microtype}
+\usepackage{color,xcolor}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage{amsmath}
-\usepackage{amsthm}
+\usepackage{amsmath,amsthm,amsfonts,mathrsfs,bm}
 \usepackage{graphicx}
+\usepackage[a4paper, margin=1.1in]{geometry}
+%\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm}
+\usepackage{prettyref}
+\usepackage[authoryear]{natbib}
+\usepackage{booktabs,multirow,multicol,rccol}
+\usepackage{eurosym}
+\usepackage{babel}
+\usepackage[unicode=true,
+			bookmarks=true,
+			bookmarksnumbered=true,
+			bookmarksopen=false, 
+			breaklinks=false,
+			pdfborder={0 0 1},
+			backref=false,
+			colorlinks=true]{hyperref}
+\hypersetup{final,
+			bookmarksopen,
+			bookmarksnumbered,
+			urlcolor={blue},
+			linkcolor={blue},
+			citecolor={blue},
+			pdfstartview={XYZ null null fitH}}
+\pdfminorversion=4
 \usepackage{setspace}
+\PassOptionsToPackage{nodisplayskipstretch}{setspace}
 \onehalfspacing
-
-\makeatletter
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-\pdfpageheight\paperheight
-\pdfpagewidth\paperwidth
-
-
+%\setstretch{1.5}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
 \theoremstyle{definition}
 \newtheorem{defn}{\protect\definitionname}
@@ -46,68 +65,22 @@
 \setlist[casenv,3]{label={{\itshape\ \casename\ \alph*.}},ref=\alph*}
 \setlist[casenv,4]{label={{\itshape\ \casename} \arabic*.},ref=\arabic*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-\usepackage{lmodern}
-\usepackage[a4paper, margin=1.1in]{geometry}
-%\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=2.5cm,rmargin=2.5cm}
-\usepackage{xcolor}
-\usepackage{prettyref}
-\usepackage{graphicx}
-\usepackage{setspace}
-\usepackage[authoryear]{natbib}
-\setstretch{1.5}
-\usepackage[unicode=true,
-            bookmarks=true,
-            bookmarksnumbered=true,
-            bookmarksopen=false, 
-            breaklinks=false,
-            pdfborder={0 0 1},
-            backref=false,
-            colorlinks=true]{hyperref}
-\hypersetup{final,
-            bookmarksopen,
-            bookmarksnumbered,
-            urlcolor={blue},
-            linkcolor={blue},
-            citecolor={blue},
-            pdfstartview={XYZ null null fitH}}
-
 \makeatletter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-\pdfminorversion=4
-\usepackage{etex}
-\usepackage{color}
-\usepackage{setspace}
-\usepackage{booktabs}
-%\usepackage[a4paper, margin=2in]{geometry}
-\usepackage{amsfonts}
-%\usepackage{amsmath}
-\usepackage{bm}
-\usepackage{mathrsfs}
-\usepackage{multirow}
-\usepackage{multicol}
-\usepackage{rccol}
-%\usepackage{enumitem}
-%\usepackage{enumerate}
-\usepackage[protrusion=true,expansion]{microtype}
-\usepackage{eurosym}
-\usepackage{graphicx}
-%\bibliography{avrefs}
-%\setlength{\abovedisplayskip}{3pt}
-%\setlength{\belowdisplayskip}{3pt}
-\PassOptionsToPackage{nodisplayskipstretch}{setspace}
 
-\makeatother
-
-\usepackage{babel}
 \providecommand{\casename}{Case}
 \providecommand{\definitionname}{Definition}
 \providecommand{\propositionname}{Proposition}
 \providecommand{\theoremname}{Theorem}
 
+
 \begin{document}
 \title{Allocation of time and the values of travel time and reliability with
 automated cars}
+
+\author{Dereje Abegaz \and Mogens Fosgerau}
+
+\maketitle
+
 \maketitle
 \begin{abstract}
 Self-driving cars make it increasingly possible to carry out some
