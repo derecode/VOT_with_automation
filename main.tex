@@ -58,6 +58,10 @@
 \fi
 \theoremstyle{plain}
 \newtheorem{prop}{\protect\propositionname}
+
+\theoremstyle{plain}
+\newtheorem{assumption}{\protect\assumptionname}
+
 \newlist{casenv}{enumerate}{4}
 \setlist[casenv]{leftmargin=*,align=left,widest={iiii}}
 \setlist[casenv,1]{label={{\itshape\ \casename} \arabic*.},ref=\arabic*}
@@ -71,6 +75,7 @@
 \providecommand{\definitionname}{Definition}
 \providecommand{\propositionname}{Proposition}
 \providecommand{\theoremname}{Theorem}
+\providecommand{\assumptionname}{Assumption}
 
 
 \begin{document}
@@ -85,7 +90,7 @@ Self-driving cars make it increasingly possible to carry out some activities whi
 \end{abstract}
 
 \section{Introduction}
-
+\label{sec:introduction}
 % by making travel more convenient, more comfortable, or by providing the opportunity to undertake useful economic activity or pleasurable social activity.
 
 Mobile communication devices are transforming the experience of travel, making it possible to work, play games or watch videos while travelling on planes, trains and buses. The car industry promises to free car drivers from driving, thereby enabling an even more drastic transformation of car travel. This paper explores the observation that the new technologies have in common that they make it possible to carry out activities while travelling that substitute for activities elsewhere, at home or at work.
@@ -99,55 +104,34 @@ We built a model that examines how a commuter optimally allocates his/her time b
 The rest of the paper is organised as follows. The next section sets out the model set up and foundation for the rest of the paper. The third and fourth sections analyse the optimal allocation of time among different activities and the value of travel time, value of reliability and value of headway when trip duration is random or deterministic. The final section provides a summary of our findings and concluding remarks.
 
 \section{The model}
+\label{sec:model}
 
-Consider a commuter who begins a day at home and who has to take a trip to a workplace, where he or she finishes the day. The commuter intends to optimally allocate the total available time during the day among different activities, which can be grouped into three depending on where they can be undertaken. One of these 
+Consider a commuter who begins a day at home and who has to take a trip to a workplace, where he finishes the day. The commuter has a time budget of $Q$ time units on the clock time $[0, Q]$ and intends to optimally allocate this among different activities that are characterised in terms of whether they can be undertaken at home, at work, or at either location as well as while travelling. Suppose some of these activities can only be performed at home while others can only be carried out at work. In addition to the home-based and work-based activities, suppose there are a third set of activities which the commuter may carry out at home and at work as well as while travelling. We refer to these as \textit{mobile activities}. 
 
-Some activities are only performed at home (work) while others can be performed at either location or while travelling. By a \textit{home-activity} we refer to a set  of activities that can be performed at home, workplace or while travelling. We use the term home-based activity to refer to those activities that are performed only at home and , Travelling is one of these activities and hence part of the commuter's total time will be set aside for this purpose. Activities 
+The commuter will set aside a part of the total available time for travelling while the remaining time is allocated among different activities. Let $t_{h}$ and $t_{w}$ respectively denote the time allocated to the home-based and work-based activities such that $0<t_{h}\leq t_{d}$ and $0<t_{w}\leq Q-t_{d}-T$ where $T$ is travel time and $t_d$ the departure time for the commute trip. Hence, $T+\left(t_{d}-t_{h}\right)+\left(Q-t_{d}-T-t_{w}\right)$ units of time will be available to carry out the mobile activity. 
 
-The commuter has to put aside a part of the total available time for travelling while the remaining time can be allocated among different activities. We categorise these activities into three Let $t_{h}$ and $t_{w}$ respectively denote the time allocated to the home-based and work-based activities such that $0<t_{h}\leq t_{d}$ and $0<t_{w}\leq Q-t_{d}-T$. Hence, $T+\left(t_{d}-t_{h}\right)+\left(Q-t_{d}-T-t_{w}\right)$ units of time will be available to carry out the mobile activity. The mobile activity is fully productive at home or at work but may be less so while travelling. This is controlled by a factor $\alpha\in\left[0,1\right]$, such that the effective amount of the mobile activity is $t_{m}=Q-\left(1-\alpha\right)T-t_{h}-t_{w}$. The parameter $\alpha$ indicates the productivity of in-vehicle time relative to time at work or at home.
+The commuter has preferences over outcomes produced as a result of the three activities.\footnote{The trip to work can be considered as an additional activity, however, it does not lead to the production of output in itself.} Suppose a unit of output is produced per unit of time used in the home-based or work-based activities while the productivity of time in the mobile activities depends on whether the activities are performed at home/work or while travelling. The commuter is assumed to be fully productive in performing the mobile activities at home or at work but may be less so while travelling. This is controlled by a factor $\alpha \in \left[0, 1\right]$, such that the amount of output per unit time spent in performing the mobile activities is $t_{m} = Q - \left( 1 - \alpha \right) T - t_{h}-t_{w}$. The parameter $\alpha$ indicates the productivity of in-vehicle time relative to time at work or at home.
 
-Consider a commuter who begins a day at home and who has to take a trip to a workplace where he or she ends the day. The commuter has a time budget of $Q$ time units in the clock time interval $\left[0,Q\right]$, which is divided into $0<t_{d}<Q$ units of time spent at home; $0<T<Q$ units of time spent commuting to work; and $Q-t_{d}-T$ units of time spent at work, where $t_{d}$ the is departure time for the commute trip. Let $t_{h}$ and $t_{w}$ respectively denote the time allocated to the home-based and work-based activities such that $0<t_{h}\leq t_{d}$ and $0<t_{w}\leq Q-t_{d}-T$. Hence, $T+\left(t_{d}-t_{h}\right)+\left(Q-t_{d}-T-t_{w}\right)$ units of time will be available to carry out the mobile activity. The mobile activity is fully productive at home or at work but may be less so while travelling. This is controlled by a factor $\alpha\in\left[0,1\right]$, such that the effective amount of the mobile activity is $t_{m}=Q-\left(1-\alpha\right)T-t_{h}-t_{w}$. The parameter $\alpha$ indicates the productivity of in-vehicle time
-relative to time at work or at home.
-
-Travelling is an additional activity but it does not lead to the production of any output in itself. However, to the extent in-vehicle time is productive, travel time can be used to perform the mobile activity. In this sense, commuting and the mobile activity are complementary in that they can be produced at the same time.
-
-\textbackslash\textbackslash{}
-
-The commuter allocates the total time among three activities
-
-and he or she has preferences over outcomes that are produced from the three activities.
-
-The commuter allocates the total The commuter has preferences over outcomes of activities The commuter derives utility from a home-based
-activity performed at the origin, from a work-based activity carried out at the destination, and from a mobile activity that may be carried out at either location and while travelling.\footnote{The mobile activity can be thought of as being an entertainment activity or a part of the home-based and/or work-based activities that can be performed while driving. The home-based activity comprises of tasks that can be performed only at home while work-based activity includes tasks performed at the destination of the trip.}
-
-The commuter has preferences over outcomes from these activities.
-
-//
-
-The commuter has a money-metric utility: %
-\begin{comment}
-Reformulate in the context of \textsc{Small and Verhoef} {[}2007{]}
-\{\textsc{2.6.1 Value of time: basic theory}\}
-\end{comment}
-{} 
+The commuter's preferences can be represented using a utility function:%
 \begin{equation}
 U\left(t_{h},t_{w};T\right)=U_{h}\left(t_{h}\right)+U_{w}\left(t_{w}\right)+U_{m}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right),\label{utility}
 \end{equation}
-which is separable into three components depending on the activity in which time is spent. It is assumed that each utility component $U_{i}$ for $i=\left\{ h,w,m\right\} $ is an increasing and strictly concave function on the range of feasible values for $t_{i}$ and that each $U_{i}$ is twice-continuously differentiable. We assume that $U_{h}^{\prime}\left(0\right) = U_{w}^{\prime}\left(0\right) = \infty$ and $U_{m}^{\prime}\left(0\right)<\infty$, such that the commuter may choose not to carry out any of the mobile activity.
+where utility is assumed to be separable into three components depending on the activities in which time is spent. We assume that each of utility component is increasing, strictly concave and twice-continuously differentiable. We further assume that $U_{h}^{\prime}\left(0\right) = U_{w}^{\prime}\left(0\right) = \infty$ and $U_{m}^{\prime}\left(0\right)<\infty$, such that the commuter may choose not to carry out any of the mobile activities.
 
-The commuter maximises utility choosing $\left(t_{h},t_{w}\right)$ subject to the constraint that time spent on all activities, including travelling, be within total time available, $Q$:  
+The commuter's problem is determining the amount of time to be allocated to the home-based, work-based and mobile activities, given the travel time. If $\left(t_{h},t_{w}\right)$ is chosen, then the amount of time available to the mobile activities will be implied by the time budget. Hence, the commuter's problem amounts choosing $\left(t_{h},t_{w}\right)$ provided that time spent on all activities, including travelling, be within total time available:  
 \begin{equation}
 t_{h}+t_{w}+T\leq Q,\label{constraint}
 \end{equation}
-The constraint also indicates that the some of the time at home and/or at work may be allocated to the mobile activity. This depends on the status of the time constraint. Accordingly, if the time constraint is binding, then the mobile activity is carried out only while travelling. If however the constraint is non-binding, then some of the time at home and/or at work will be used to perform the mobile activity. 
+This constraint also indicates that some of the time at home and/or at work may be allocated to the mobile activities. This depends on whether the commuter has a binding time constraint at home or work. Accordingly, if the commuter faces a binding time constraint both at home and work, then the mobile activities are carried out only while travelling. In the absence of binding constraint, however, some of the time at home and/or at work may be used to perform the mobile activities. Given the optimal allocation of time, the commuter will also choose the optimal departure time for the commute trip.
 
-The commuter aims to optimally allocate his/her total time among different activities. Given the optimal allocation of time, the commuter will also choose the optimal departure time for the commute trip.
-
-CUTS
-
-Three activities (h, m, w); two types of activities (immobile and mobile); preferences: a unit time in the home-based and work-based activities produces one unit of output, while a unit of time in the mobile activity produces one or $\alpha$ unit of m depending on where it is spent. Preference over outcomes, meaning
-
-Each activity leads to the production of a different output -- each unit 
+\begin{assumption}
+    For $j=\{h,w,m\}$: 
+    \begin{enumerate}
+        \item each $U_j$ is increasing, strictly concave and twice-continuously differentiable in $t_j$
+        \item $U_{h}^{\prime}\left(0\right) = U_{w}^{\prime}\left(0\right) = \infty$ and $U_{m}^{\prime}\left(0\right)<\infty$
+        \item each $U_j$ is differentiable with respect to $\alpha$
+    \end{enumerate}
+\end{assumption}
 
 \section{Allocation of time and the value of travel time with deterministic trip duration}
 
