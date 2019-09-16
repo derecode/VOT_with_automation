@@ -109,7 +109,7 @@ The rest of the paper is organised as follows. The next section sets out the mod
 \label{sec:model1}
 
 % By a \textit{home-based activity} we refer to leisure and work activities that can only be carried out at home
-Consider a commuter who begins a day at home and who has to take a trip to a workplace, where he finishes the day. The commuter has a time budget of $Q$ time units on the clock interval $[0, Q]$ and intends to allocate this between leisure and work. Suppose both leisure and work activities can be carried out while travelling and that the work (leisure) activity cannot be undertaken at home (work). We refer to leisure and work activities that can only be carried out at home and at work as \emph{home-based activity} and \emph{work-based activities}, respectively. As such, leisure and work activities are characterised in terms of whether they can be undertaken at home, at work, or while travelling. We use the term \textit{mobile activities} to refer to work and leisure activities which the commuter may carry out at home, at work and while travelling.
+Consider a commuter who begins a day at home and who has to take a trip to a workplace where he finishes the day. The commuter has a time budget of $Q$ time units on the clock interval $[0, Q]$ and intends to allocate this between leisure and work. Suppose both leisure and work activities can be carried out while travelling and that the work (leisure) activity cannot be undertaken at home (work). We refer to leisure and work activities that can only be carried out at home and at work as \emph{home-based activity} and \emph{work-based activities}, respectively. As such, leisure and work activities are characterised in terms of whether they can be undertaken at home, at work, or while travelling. We use the term \textit{mobile activities} to refer to work and leisure activities which the commuter may carry out at home, at work and while travelling.
 
 Let $T$ be the travel time for the commute trip. After setting aside $T$ units of time for travelling, suppose the commuter is free to allocate the remaining $Q-T$ units of time among the three activities. Let $t_{h}$ and $t_{w}$ respectively denote the time allocated to the home-based and work-based activities such that $0<t_{h}\leq t_{d}$ and $0<t_{w}\leq Q-t_{d}-T$ where $t_d$ the departure time for the commute trip. Hence,  $T+\left(t_{d}-t_{h}\right)+\left(Q-t_{d}-T-t_{w}\right)$ units of time will be available to carry out the mobile activity. 
 
@@ -148,21 +148,29 @@ The constraint also indicates that some of the time at home and/or at work may b
 \section{Allocation of time and the value of travel time with deterministic trip duration}
 
 \subsection{Optimal allocation of time}
-\begin{definition}
-(\textbf{feasible time allocation}) A time allocation is said to be \textbf{\textit{feasible}} if the time allocated to the home-based and work-based activities does not exceed the commuter's time budget less travel time.
-\end{definition}
 
-Given the fixed travel time, the commuter's problem is to optimally allocate the total time among different activities. This amounts to maximising trip utility subject to the constraint that time spent on different activities cannot exceed the total available time:
-\begin{gather*}
-\max_{t_{h},t_{w}}U\left(t_{h},t_{w};T\right)=U_{h}\left(t_{h}\right)+U_{w}\left(t_{w}\right)+U_{m}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right)\\
-\mbox{s.t. }T+t_{h}+t_{w}\leq Q
-\end{gather*}
+Given the fixed travel time, the commuter's problem is to optimally allocate the total time among different activities. This amounts to maximising trip utility subject to the constraint that time spent on different activities cannot exceed the total available time:%
+\begin{equation}
+\begin{aligned}
+    \max_{t_{h},t_{w}} \, U\left(t_{h},t_{w};T\right) = U_{h} \left(t_{h}\right) + & U_{w}\left(t_{w}\right) + U_{m}\left( Q - \left(1-\alpha\right) T - t_{h} - t_{w} \right) \\
+    \mbox{subject to} \quad & T + t_{h} + t_{w} \leq Q \\
+                      \quad & t_w, t_h \geq 0 
+\end{aligned}
+\label{eq:maxProb_fixedT}
+\end{equation}
  The Lagrangian for the utility maximisation problem can be written as
 \begin{equation*}
-\mathcal{L}\equiv U\left(t_{h},t_{w};T\right)+\lambda\left(Q-T-t_{h}-t_{w}\right)
+\mathcal{L} \equiv U\left(t_{h},t_{w};T\right) + \lambda \left(Q - T - t_{h} - t_{w}\right)
 \end{equation*}%
-where $\lambda\geq0$ is a Lagrangian multiplier, which indicates the sensitivity of optimal utility with respect to small changes in the time constraint. The first-order conditions for the utility maximisation problem are as follows:
+where $\lambda\geq0$ is a Lagrangian multiplier, which indicates the sensitivity of optimal utility with respect to small changes in the time constraint. 
 
+\begin{definition}
+(\textbf{feasible time allocation}) A time allocation is said to be \textbf{\textit{feasible}} if the total time allocated to the home-based and work-based activities does not exceed the commuter's time available for these activities. 
+\end{definition}
+
+% The feasible set $\Omega = $
+
+The first-order conditions for the utility maximisation problem are as follows:
 \begin{equation}
 \begin{aligned}
 U_{h}^{\prime}\left(t_{h}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right)-\lambda & =0\\
@@ -178,35 +186,20 @@ U_{h}^{\prime}\left(t_{h}^{\ast}\right)-U_{w}^{\prime}\left(t_{w}^{\ast}\right)=
 \end{equation}%
 where $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ denotes the optimal time allocated to the home-based and work-based activities with the corresponding time allocated to the mobile activity being $t_{m}^{\ast}=t_{m}\left(t_{h}^{\ast},t_{w}^{\ast}\right)$. The following theorem establishes the existence of such an optimum.
 
+% define the feasible set
+
 \begin{theorem}
-If each $U_{i}\left(\cdot\right)$ is increasing, twice continuously differentiable and strictly concave, then there exists a unique optimal allocation $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and a multiplier \textup{$\lambda^{\ast}\geq0$} satisfying the conditions in (\ref{eq:foc_deterministic}).
+If each $U_{i}\left(\cdot\right)$ is continuous, increasing, twice-continuously differentiable and strictly concave, then there exists a unique optimal allocation $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and a multiplier \textup{$\lambda^{\ast}\geq0$} satisfying the conditions in (\ref{eq:foc_deterministic}).
 \end{theorem}
 
-\begin{proof}
-Since $U$ is continuous, differentiable and strictly concave on a closed interval, it attains a unique maximum at a point $\left(t_{h}^{\ast},t_{w}^{\ast}\right)=\left\{ \left(t_{h},t_{w}\right):\frac{\partial U\left(t_{h}^{\ast},t_{w}^{\ast}\right)}{\partial t_{h}}=\frac{\partial U\left(t_{h}^{\ast},t_{w}^{\ast}\right)}{\partial t_{w}}=0\right\} $. Since $g\left(t_{h},t_{w}\right)=-\left(Q-T-t_{h}-t_{w}\right)$ is linear, the feasible set $\Omega=\left\{ \left(t_{h},t_{w}\right);g\left(t_{h},t_{w}\right)\leq0\right\} $ is convex. To prove the existence, suppose the constraint is inactive
-at optimum and hence $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ is in the interior of $\Omega$. Thus, it must be that $\frac{\partial U\left(t_{h}^{\ast},t_{w}^{\ast}\right)}{\partial t_{h}}=\frac{\partial U\left(t_{h}^{\ast},t_{w}^{\ast}\right)}{\partial t_{w}}=0$
-and conditions in (\ref{eq:foc_deterministic}) hold with $\lambda=\lambda^{\ast}=0$.
-
-If the constraint is active at optimum, then $g\left(t_{h}^{\ast},t_{w}^{\ast}\right)=0$. By Farkas' Lemma, there must exist $\lambda\geq0$ such that (\ref{eq:foc_deterministic}) holds. For $\lambda^{\ast}\geq0$, the Lagrangian evaluated at any $\left(t_{h},t_{w}\right)\in\Omega$: 
-\begin{equation*}
-\mathcal{L}\left(t_{h},t_{w},\lambda^{\ast}\right)=U\left(t_{h},t_{w}\right)-\lambda^{\ast}g\left(t_{h},t_{w}\right)
-\end{equation*}
-is also strictly concave in $\left(t_{h},t_{w}\right)$. By observing that $\lambda^{\ast}g\left(t_{h},t_{w}\right)\leq0$, we have
-\begin{align*}
-U\left(t_{h},t_{w};T\right)< & \mathcal{L}\left(t_{h},t_{w},\lambda^{\ast}\right)\\
-< & \mathcal{L}\left(t_{h}^{\ast},t_{w}^{\ast},\lambda^{\ast}\right)+\frac{\partial\mathcal{L}\left(t_{h}^{\ast},t_{w}^{\ast},\lambda^{\ast}\right)}{\partial t_{h}}\left(t_{h}-t_{h}^{\ast}\right)+\frac{\partial\mathcal{L}\left(t_{h}^{\ast},t_{w}^{\ast},\lambda^{\ast}\right)}{\partial t_{w}}\left(t_{w}-t_{w}^{\ast}\right)\\
-= & U\left(t_{h}^{\ast},t_{w}^{\ast};T\right)+\frac{\partial\mathcal{L}\left(t_{h}^{\ast},t_{w}^{\ast},\lambda^{\ast}\right)}{\partial t_{h}}\left(t_{h}-t_{h}^{\ast}\right)+\frac{\partial\mathcal{L}\left(t_{h}^{\ast},t_{w}^{\ast},\lambda^{\ast}\right)}{\partial t_{w}}\left(t_{w}-t_{w}^{\ast}\right)\\
-= & U\left(t_{h}^{\ast},t_{w}^{\ast};T\right).
-\end{align*}
-Hence, $\left(t_{h}^{\ast},t_{w}^{\ast},\lambda^{\ast}\right)$ exists and is unique.
+\begin{proof} 
+Since the set of feasible time allocations is convex and $U$ is differentiable and strictly concave, there exists an optimal allocation  $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and a multiplier $\lambda^{\ast} \geq 0$ satisfying the first-order conditions in \eqref{eq:foc_deterministic} and that this optimum is unique \citep[Theorem 1.19 and Theorem 1.20 in][]{DelaFonte_mathematical_2000}.
 \end{proof}
 
-Now consider the commuter's choice of departure time given the optimal allocation of time. If the time constraint is binding, the mobile activity will be performed only while travelling since all the remaining time will be allocated to activities at either end of the trip. Hence, at optimum the commuter departs at time $t_{h}^{\ast}$. On the other hand, if the time constraint is non-binding, i.e., $\lambda^{\ast}=0$, then the commuter undertakes the mobile activity while travelling and at home and/or at work. In this case, the departure time may be any time between $t_{h}^{\ast}$ and $Q-t_{w}^{\ast}-T$.%
-
+Now consider the commuter's choice of departure time given the optimal allocation of time. If the time constraint is binding, the mobile activity will be performed only while travelling since all the remaining time will be allocated to activities at either end of the trip. Hence, at optimum the commuter departs at time $t_{h}^{\ast}$. On the other hand, if the time constraint is non-binding, i.e., $\lambda^{\ast}=0$, then the commuter undertakes the mobile activity while travelling and at home and/or at work. In this case, the departure time may be any time between $t_{h}^{\ast}$ and $Q-t_{w}^{\ast}-T$. This is so since the effective units of the mobile activity per unit time is the same at home and at work.
 \begin{comment}
 Since travel time is deterministic, there is no need for the commuter to give head start. As such the departure time can set in such a way that it is aligned with the optimal time allocation. The optimal departure time depends on whether or not the time constraint is binding. If the time constraint is binding, time at the origin and destination will be fully devoted to the home-based activity and the work-based activity, respectively, with the mobile activity being carried out only while travelling.
 \end{comment}
-This is so since the effective units of the mobile activity per unit time is the same at home and at work.
 
 The utility to an optimising commuter is%
 \begin{equation}
@@ -222,9 +215,14 @@ have a second-order effect on $U^{\ast}$. The effect on optimal utility occurs f
 A change in trip duration affects optimal utility through its impact on the time constraint and the effective units of the mobile activity produced. Applying the envelope theorem on $U^{\ast}$, we obtain that $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}=\left(\alpha-1\right)U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}^{\ast}-t_{w}^{\ast}\right)-\lambda^{\ast}\leq0$ where the inequality follows since $U_{m}^{\prime}\left(\cdot\right)>0$, $\lambda^{\ast}\geq0$ and $\alpha\leq1$. This implies that a unit reduction in travel time is worth $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}$ to the commuter. Hence, the commuter will be indifferent between forgoing
 $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}$ units of money for a unit reduction in travel time. This rate of trade-off between travel time
 and money is called the value of travel time, which is given by:%
-\begin{equation}
--\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}=\left(1-\alpha\right)U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}^{\ast}-t_{w}^{\ast}\right)+\lambda^{\ast}=U_{h}^{\prime}\left(t_{h}^{*}\right)-\alpha U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}^{\ast}-t_{w}^{\ast}\right)\label{eq:VOT_det}
-\end{equation}
+\begin{align}
+\begin{split}
+-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T} & = \left(1 - \alpha\right) U_{m}^{\prime}\left( Q - \left(1 - \alpha\right) T - t_{h}^{\ast} - t_{w}^{\ast}\right) + \lambda^{\ast} \\
+& = U_{h}^{\prime}\left( t_{h}^{*} \right) - \alpha U_{m}^{\prime}\left( Q - \left(1 - \alpha\right) T - t_{h}^{\ast} - t_{w}^{\ast} \right)
+\end{split}
+\label{eq:VOT_det}
+\end{align}
+
 Accordingly, the value of travel time is the sum of the resource value of a unit of time, $\lambda^{\ast}$, and the gain from using this
 saved time to carry out the mobile activity more productively at home or work. Alternatively, it can be interpreted as the gain to the commuter had the saved time been used to carry out the home-based or work-based activity as opposed to undertaking the mobile activity while travelling.
 
@@ -340,7 +338,7 @@ We solve the utility maximisation problem by backward induction: Conditional on 
 Upon arrival at the destination, the commuter has $Q-T-t_{d}$ time units to be allocated between the mobile and work-based activities.
 As travel time is realised, the commuter faces no uncertainty and his/her problem amounts to:
 \begin{gather*}
-\max_{t_{w}}U_{m}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-t_{w}\right)+U_{w}\left(t_{w}\right)\\
+\max_{t_{w}} \, U_{m}\left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X\right) - t_{h} - t_{w}\right) + U_{w}\left(t_{w}\right)\\
 \mbox{s.t. }t_{w}\leq Q-\mu-\sigma X-t_{d}.
 \end{gather*}
 The constraint indicates that the time that will be allocated to the work-based activity cannot exceed the total available time at the
@@ -349,13 +347,14 @@ destination. The Lagrangian of the maximisation problem will be%
 U_{m}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-t_{w}\right)+U_{w}\left(t_{w}\right)+\eta\left(Q-\mu-\sigma X-t_{d}-t_{w}\right),
 \end{equation*}
 with first-order conditions for an optimum being%
-
 \begin{subequations}
 \label{eq:tw_stage}
 \begin{align}
-U_{w}^{\prime}\left(t_{w}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-t_{w}\right)-\eta & =0\label{eq:stage2_wrt_tw}\\
+U_{w}^{\prime}\left(t_{w}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-t_{w}\right)-\eta & =0
+\label{eq:stage2_wrt_tw}\\
 \eta\left(Q-\mu-\sigma X-t_{d}-t_{w}\right) & =0\label{eq:stage2_compl}\\
-\eta,t_{w} & \geq0\label{eq:stage2_nonnegative}
+\eta,t_{w} & \geq 0
+\label{eq:stage2_nonnegative}
 \end{align}
 \end{subequations}
 
@@ -369,21 +368,26 @@ V\left(\hat{t}_{w};t_{h}\right)\equiv U_{m}\left(Q-\left(1-\alpha\right)\left(\m
 \end{equation*}
 
 Given the optimal allocation of time at work, the commuter will determine the optimal allocation of his/her total time at the origin between the mobile and home-based activities. This decision is made in light of the travel time distribution as the exact travel time is not known before the trip is taken. The commuter chooses the time for the home-based activity in order to maximise expected utility:
-\begin{gather*}
-\max_{t_{h}}E\left[U_{h}\left(t_{h}\right)+V\left(\hat{t}_{w};t_{h}\right)\right]\\
-\mbox{s.t. }t_{h}\leq t_{d}
-\end{gather*}
-where the expectation is over all possible values of the standardised travel time, $X$. The Lagrangian of the utility maximisation problem can be given as 
+\begin{align}
+\begin{split}
+\max_{t_{h}} \, & E\left[U_{h}\left(t_{h}\right)+V\left(\hat{t}_{w};t_{h}\right)\right]\\
+& \mbox{subject to } \, t_{h} \leq t_{d}
+\end{split}
+\label{eq:firstStageProblem}
+\end{align}
+where the expectation is over all possible values of the standardised travel time, $X$. The Lagrangian of the utility maximisation problem can be given as: 
 \begin{equation*}
 E\left[U_{h}\left(t_{h}\right)+U_{m}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)+U_{w}\left(\hat{t}_{w}\right)+\phi\left(t_{h}-t_{d}\right)\right]
 \end{equation*}
 with first-order conditions
-
 \begin{subequations}\label{eq:th_stage}
 \begin{align}
-E\left[U_{h}^{\prime}\left(t_{h}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)-\phi\right] & =0\label{eq:stage1_wrt_th}\\
-\phi,t_{h} & \geq0\label{eq:stage1_lambda}\\
-\phi\left(t_{d}-t_{h}\right) & =0\label{eq:stage1_lambdai_const}
+E\left[U_{h}^{\prime}\left(t_{h}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)-\phi\right] & =0
+\label{eq:stage1_wrt_th}\\
+\phi,t_{h} & \geq 0 
+\label{eq:stage1_lambda}\\
+\phi\left(t_{d}-t_{h}\right) & =0
+\label{eq:stage1_lambdai_const}
 \end{align}
 \end{subequations}
 
@@ -552,6 +556,10 @@ If $\hat{\eta}>0$ then $t_{d}+t_{w}+T-Q=0$ and hence $\frac{\partial t_{d}}{\par
 
 The conclusion is that $V$is concave in $t_{h}$
 
+\clearpage{}
+
+\bibliographystyle{authordate1}
+\bibliography{references}
 
 \end{document}
 
