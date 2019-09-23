@@ -27,6 +27,13 @@
 \usepackage{booktabs,multirow,multicol,rccol}
 \usepackage{eurosym}
 \usepackage{babel}
+
+%############# tikz ######################
+\usepackage{tikz}
+\usepackage{svg}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt 
+%############# tikz ######################
+
 \usepackage[unicode=true,
 			bookmarks=true,
 			bookmarksnumbered=true,
@@ -119,6 +126,17 @@ Let $T<Q$ be the travel time for the commute trip. After setting aside $T$ units
 
 The commuter has preferences over outcomes produced as a result of the three activities.\footnote{The trip to work can be considered as an additional activity, however, it does not lead to the production of output in itself.} Given those preferences, the commuter allocates the total time as to obtain the best result among those available. Suppose a unit of output is produced per unit of time used in the home-based or work-based activities while the productivity of time in the mobile activity depends on whether the activity is undertaken at home, at work or while travelling. Suppose the commuter is fully productive in performing the mobile activity at home or at work but may be less so while travelling. This is controlled by a factor $\alpha \in \left[0, 1\right]$, such that the amount of output per unit time spent in performing the mobile activity is $t_{m} = Q - \left( 1 - \alpha \right) T - t_{h}-t_{w}$. The parameter $\alpha$ indicates the productivity of in-vehicle time relative to time at work or at home.\footnote{The range of activities that can be performed during a trip depends on the degree of automation of the vehicle.}
 
+% \begin{figure}[ht!]
+%     \centering
+%     \includegraphics[scale=0.80]{allocation2.png}
+%     \caption{Allocation of time with and without binding constraints}
+%     \label{fig:time_allocation}
+% \end{figure}
+
+
+\input{time_allocation.tex}
+
+
 We represent the commuter's preferences using a money-metric utility function:%
 \begin{equation}
 U\left(t_{h},t_{w};T\right)=U_{h}\left(t_{h}\right)+U_{w}\left(t_{w}\right)+U_{m}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right),
@@ -156,7 +174,7 @@ The constraint also indicates that some of the time at home and/or at work may b
 
 \subsection{Optimal allocation of time}
 
-Suppose the duration of the commute time is known with certainty ahead of the trip. Taking the trip duration as given, the commuter will allocate his or her total time among different activities and his or her problem amounts to choosing a time allocation in order to maximise utility subject to the constraint that time spent on different activities cannot exceed the total available time.\footnote{Consider rewriting the time constraint so that it consists of two elements: $t_h \leq t_d$ and $t_w \leq Q-T-t_d$. So, we will have two multipliers that may imply different resource values of time at home and at work.} The problem can be written as%
+If the duration of the commute time is known with certainty ahead of the trip, the commuter will take this as given and allocate his or her total time among different activities. His or her problem amounts to choosing a time allocation in order to maximise utility subject to the constraint that time spent on different activities cannot exceed the total available time\footnote{Consider rewriting the time constraint so that it consists of two elements: $t_h \leq t_d$ and $t_w \leq Q-T-t_d$. So, we will have two multipliers that may imply different resource values of time at home and at work.}:
 \begin{equation}
 \begin{aligned}
     \max_{t_{h},t_{w}} \, U\left(t_{h},t_{w};T\right) = U_{h} \left(t_{h}\right) + & U_{w}\left(t_{w}\right) + U_{m}\left( Q - \left(1-\alpha\right) T - t_{h} - t_{w} \right) \\
@@ -171,7 +189,7 @@ That is, given some $T$, $\alpha$, and $Q$ the commuter determine the time alloc
 (\textbf{feasible time allocation}) A time allocation $\left( t_h, t_w \right)$ is said to be \textbf{\textit{feasible}} if the total time allocated to the home-based and work-based activities does not exceed the commuter's time available for these activities, i.e., $t_h + t_w \leq Q - T$. 
 \end{definition}
 
-Since the constraint is linear, the set of feasible time allocations is convex. The objective function $U$ is strictly concave as it is the sum of strictly concave functions. Thus, the problem in \eqref{eq:maxProb_fixedT} one of is a concave optimisation with a convex constraint set. The Lagrangian for the utility maximisation problem can be written as
+Since the constraint is linear, the set of feasible time allocations is convex. The objective function $U$ is strictly concave as it is the sum of strictly concave functions. Thus, the problem in \eqref{eq:maxProb_fixedT} is one of a concave optimisation with a convex constraint set. The Lagrangian for the utility maximisation problem can be written as
 \begin{equation*}
 \mathcal{L} \equiv U\left(t_{h},t_{w};T\right) + \lambda \left(Q - T - t_{h} - t_{w}\right)
 \end{equation*}%
@@ -573,6 +591,9 @@ The conclusion is that $V$is concave in $t_{h}$
 
 \bibliographystyle{authordate1}
 \bibliography{references}
+
+
+% \clearpage
 
 \end{document}
 
