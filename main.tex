@@ -174,7 +174,7 @@ The constraint also indicates that some of the time at home and/or at work may b
 
 \subsection{Optimal allocation of time}
 
-If the duration of the commute time is known with certainty ahead of the trip, the commuter will take this as given and allocate his or her total time among different activities. His or her problem amounts to choosing a time allocation in order to maximise utility subject to the constraint that time spent on different activities cannot exceed the total available time\footnote{Consider rewriting the time constraint so that it consists of two elements: $t_h \leq t_d$ and $t_w \leq Q-T-t_d$. So, we will have two multipliers that may imply different resource values of time at home and at work.}:
+If travel time is known with certainty ahead of the trip, the commuter will take this as given and allocate his or her total time among different activities. His or her problem amounts to choosing a time allocation in order to maximise utility subject to the constraint that time spent on different activities cannot exceed the total available time\footnote{Consider rewriting the time constraint so that it consists of two elements: $t_h \leq t_d$ and $t_w \leq Q-T-t_d$. So, we will have two multipliers that may imply different resource values of time at home and at work.}:
 \begin{equation}
 \begin{aligned}
     \max_{t_{h},t_{w}} \, U\left(t_{h},t_{w};T\right) = U_{h} \left(t_{h}\right) + & U_{w}\left(t_{w}\right) + U_{m}\left( Q - \left(1-\alpha\right) T - t_{h} - t_{w} \right) \\
@@ -198,15 +198,19 @@ where $\lambda\geq0$ is a Lagrangian multiplier, which indicates the sensitivity
 % The feasible set $\Omega = $
 
 The first-order conditions for the utility maximisation problem are as follows:
-\begin{equation}
-\begin{aligned}
-U_{h}^{\prime}\left(t_{h}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right)-\lambda & =0\\
-U_{w}^{\prime}\left(t_{w}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right)-\lambda & =0\\
-\lambda\left(Q-T-t_{h}-t_{w}\right) & =0\\
-\lambda,t_{h},t_{w} & \geq0
-\end{aligned}
+\begin{subequations}
+\begin{align}
+U_{h}^{\prime}\left(t_{h}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right)-\lambda & =0
+\label{eq:foc_deterministic_th} \\
+U_{w}^{\prime}\left(t_{w}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right)-\lambda & =0
+\label{eq:foc_deterministic_tw} \\
+\lambda\left(Q-T-t_{h}-t_{w}\right) & =0
+\label{eq:foc_deterministic_lmd} \\
+\lambda,t_{h},t_{w} & \geq 0
+\label{eq:foc_deterministic_nonnega}
+\end{align}
 \label{eq:foc_deterministic}
-\end{equation}
+\end{subequations}
 These conditions imply that, regardless of the status of the time constraint, the commuter will allocate the total time in such a way that the marginal utility of time is equalised between the home-based and the work-based activities:%
 \begin{equation}
 U_{h}^{\prime}\left(t_{h}^{\ast}\right)-U_{w}^{\prime}\left(t_{w}^{\ast}\right)=0\label{eq:Uh_eq_Uw}
@@ -214,6 +218,7 @@ U_{h}^{\prime}\left(t_{h}^{\ast}\right)-U_{w}^{\prime}\left(t_{w}^{\ast}\right)=
 where $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ denotes the optimal time allocated to the home-based and work-based activities with the corresponding time allocated to the mobile activity being $t_{m}^{\ast}=t_{m}\left(t_{h}^{\ast},t_{w}^{\ast}\right)$. In addition, optimal allocation with binding constraint requires the marginal utility of time in the mobile activity be lower than that in each of the home-based or work-based activities. The resulting difference in utility will be equal to the resource value of a unit of time, $\lambda$. If the constraint is non-binding , i.e. $\lambda=0$, then the marginal utility of time will be equalised among the three activities. The following theorem establishes the existence of such an optimum.
 
 \begin{theorem}
+\label{thm:optimum_det}
 If each $U_{i}\left(\cdot\right)$ is continuous, increasing, twice-continuously differentiable and strictly concave, then there exists a unique optimal allocation $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and a multiplier \textup{$\lambda^{\ast}\geq0$} satisfying the conditions in (\ref{eq:foc_deterministic}).
 \end{theorem}
 
@@ -226,11 +231,11 @@ Now consider the commuter's choice of departure time in light of the optimal all
 Since travel time is deterministic, there is no need for the commuter to give head start. As such the departure time can set in such a way that it is aligned with the optimal time allocation. The optimal departure time depends on whether or not the time constraint is binding. If the time constraint is binding, time at the origin and destination will be fully devoted to the home-based activity and the work-based activity, respectively, with the mobile activity being carried out only while travelling.
 \end{comment}
 
-The utility to an optimising commuter is%
+The utility to an optimising commuter,%
 \begin{equation}
 U^{\ast}\equiv U\left(t_{h}^{\ast},t_{w}^{\ast};T\right)=\max_{t_{h},t_{w},t_{h}+t_{w}+T\leq Q}U_{h}\left(t_{h}\right)+U_{m}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right)+U_{w}\left(t_{w}\right),\label{eq:UStarDet}
 \end{equation}
-which is defined for a given trip duration and level of productivity of in-vehicle time, and hence a change in these quantities can affect the optimal utility. Thus, optimal choices can be written as $t_h^{\ast}= t_h^{\ast} \left(T, \alpha \right)$ and $t_w^{\ast} = t_w^{\ast} \left(T, \alpha \right)$, but this is suppressed to simplify notation. In the following section, we analyse the welfare effect of a small reduction in travel time and improvement in productivity of in-vehicle time. %However, such a change will not have a second-order effect on $U^{\ast}$ as utility is optimised with respect to $\left(t_{h},t_{w}\right)$.
+is defined for a given trip duration and level of productivity of in-vehicle time, and hence a change in these quantities can affect the optimal utility. Thus, optimal choices can be written as $t_h^{\ast}= t_h^{\ast} \left(T, \alpha \right)$ and $t_w^{\ast} = t_w^{\ast} \left(T, \alpha \right)$, but this is suppressed to simplify notation. In the following section, we analyse the welfare effect of a small reduction in travel time and improvement in productivity of in-vehicle time. %However, such a change will not have a second-order effect on $U^{\ast}$ as utility is optimised with respect to $\left(t_{h},t_{w}\right)$.
 
 
 \subsubsection*{The welfare effect of increased automation}
@@ -245,7 +250,9 @@ Since utility is optimised with respect to $\left(t_{h},t_{w}\right)$, a change 
 
 \subsubsection*{The value of travel time}
 
-A change in trip duration affects optimal utility through its impact on the time constraint and the effective units of the mobile activity produced. Applying the envelope theorem on $U^{\ast}$, we obtain that $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}=\left(\alpha-1\right)U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}^{\ast}-t_{w}^{\ast}\right)-\lambda^{\ast}\leq0$ where the inequality follows since $U_{m}^{\prime}\left(\cdot\right)>0$, $\lambda^{\ast}\geq0$ and $\alpha\leq1$. This implies that a unit reduction in travel time is worth $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}$ to the commuter. Hence, the commuter will be indifferent between forgoing $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}$ units of money for a unit reduction in travel time. This rate of trade-off between travel time and money is called the value of travel time, which is given by:%
+% A change in trip duration affects optimal utility through its impact on the time constraint and the effective units of the mobile activity produced. Applying the Envelope Theorem on $U^{\ast}$, we obtain that $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}=\left(\alpha-1\right)U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}^{\ast}-t_{w}^{\ast}\right)-\lambda^{\ast}\leq0$ where the inequality follows since $U_{m}^{\prime}\left(\cdot\right)>0$, $\lambda^{\ast}\geq0$ and $\alpha\leq1$. This implies that a unit reduction in travel time is worth $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}$ to the commuter. Hence, the commuter will be indifferent between forgoing $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}$ units of money for a unit reduction in travel time. This rate of trade-off between travel time and money is called the value of travel time, which is given by:%
+
+The \textbf{\textit{value of travel time}} is the maximum amount a commuter is willing-to-pay for a unit reduction in travel time. Applying the Envelope Theorem on $U^{\ast}$ and noting that utility is money-metric, the value of travel time in our model is:
 \begin{align}
 \begin{split}
 -\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T} & = \left(1 - \alpha\right) U_{m}^{\prime}\left( Q - \left(1 - \alpha\right) T - t_{h}^{\ast} - t_{w}^{\ast}\right) + \lambda^{\ast} \\
@@ -253,16 +260,11 @@ A change in trip duration affects optimal utility through its impact on the time
 \end{split}
 \label{eq:VOT_det}
 \end{align}
-
-Accordingly, the value of travel time is the sum of the resource value of a unit of time, $\lambda^{\ast}$, and the gain from using this
+where the second line follows from the first after substituting $\lambda^{\ast}$ by the equivalent expression in \eqref{eq:foc_deterministic_th}. Accordingly, the value of travel time is the sum of the resource value of a unit of time, $\lambda^{\ast}$, and the gain from using this
 saved time to carry out the mobile activity more productively at home or work. Alternatively, it can be interpreted as the gain to the commuter had the saved time been used to carry out the home-based or work-based activity as opposed to undertaking the mobile activity while travelling.
 
-\begin{definition}
-The \textbf{\textit{value of travel time}} (VOT) is the maximum amount a commuter is willing-to-pay for a unit reduction in travel time. Since utility is money-metric, the VOT is equal to $-\frac{ \mathrm{d} U^{\ast} } {\mathrm{d}T}$.
-\end{definition}
+Since $U_{h}^{\prime}\left(t_{h}^{*}\right)\geq U_{m}^{\prime}\left(t_{m}^{\ast}\right)$, the commuter is willing-to-pay some amount for a unit reduction in travel time. The size this amount depends on the status of the time constraint and the level of productivity of in-vehicle time. If the time constraint is non-binding and in-vehicle time is fully productive, then the value travel time will be zero. On the other hand, if the constraint is binding, then the value of travel time is positive even if travel time is fully productive. This is so since, in this case, more time is allocated to the mobile activity than desired. The following proposition states how the value of travel time due to a change in the level of productivity of in-vehicle time. 
 
-
-The fact that $U_{h}^{\prime}\left(t_{h}^{*}\right)\geq U_{m}^{\prime}\left(t_{m}^{\ast}\right)$ implies that the commuter is willing-to-pay some amount for a unit reduction in the mean travel time. The size this amount depends on the status of the time constraint and the level of productivity of in-vehicle time. If the time constraint is non-binding and in-vehicle time is fully productive, then the value travel time will be zero. On the other hand, if the constraint is binding, then the value of travel time is positive even if travel time is fully productive. This is so since, in this case, more time is allocated to the mobile activity than desired. 
 
 \begin{prop}
 The value of travel time declines with the productivity of in-vehicle time if the coefficient of risk aversion of $U_{m}$ is lower than 1, i.e., $\vartheta=-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{m}^{\prime}\left(t_{m}^{\ast}\right)}<1$ where $t_{m}^{\ast}=t_{m}\left(t_{h}^{\ast},t_{w}^{\ast}\right)$.
@@ -271,29 +273,22 @@ The value of travel time declines with the productivity of in-vehicle time if th
 
 \begin{proof}
 We want to show that
-\begin{align*}
-\frac{\partial\left(-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha} & =\left(1-\alpha\right)\left(T-\frac{\partial t_{h}^{\ast}}{\partial\alpha}-\frac{\partial t_{w}^{\ast}}{\partial\alpha}\right)U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)-U_{m}^{\prime}\left(t_{m}^{\ast}\right)+\frac{\partial\lambda^{\ast}}{\partial\alpha}<0
-\end{align*}
-provided that $\vartheta\equiv-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{m}^{\prime}\left(t_{m}^{\ast}\right)}<1$. To see this, differentiate the first-order conditions in (\ref{eq:foc_deterministic}):
-\begin{align*}
-U_{h}^{\prime\prime}\text{\ensuremath{\left(t_{h}\right)}}\frac{\partial t_{h}^{\ast}}{\partial\alpha}-U_{m}^{\prime\prime}\text{\ensuremath{\left(t_{m}^{\ast}\right)}}\left(T-\frac{\partial t_{h}^{\ast}}{\partial\alpha}-\frac{\partial t_{w}^{\ast}}{\partial\alpha}\right)-\frac{\partial\lambda^{\ast}}{\partial\alpha}= & 0\\
-U_{w}^{\prime\prime}\text{\ensuremath{\left(t_{w}\right)}}\frac{\partial t_{w}^{\ast}}{\partial\alpha}-U_{m}^{\prime\prime}\text{\ensuremath{\left(t_{m}^{\ast}\right)}}\left(T-\frac{\partial t_{h}^{\ast}}{\partial\alpha}-\frac{\partial t_{w}^{\ast}}{\partial\alpha}\right)-\frac{\partial\lambda^{\ast}}{\partial\alpha}= & 0
-\end{align*}
-and solve for $\frac{\partial t_{w}^{\ast}}{\partial\alpha}$ to obtain $\frac{\partial t_{w}^{\ast}}{\partial\alpha}=\frac{U_{h}^{\prime\prime}\text{\ensuremath{\left(t_{h}^{\ast}\right)}}}{U_{w}^{\prime\prime}\text{\ensuremath{\left(t_{w}^{\ast}\right)}}}\frac{\partial t_{h}^{\ast}}{\text{\ensuremath{\partial\alpha}}}$. Substituting this in the above and manipulating, we have: 
+\begin{align}
+\frac{\partial\left(-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha} & =\left(1-\alpha\right)\left(T-\frac{\partial t_{h}^{\ast}}{\partial\alpha} - \frac{\partial t_{w}^{\ast}}{\partial\alpha}\right)U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)-U_{m}^{\prime}\left(t_{m}^{\ast}\right)+\frac{\partial\lambda^{\ast}}{\partial\alpha} < 0
+\label{eq:vot_alpha_det}
+\end{align}
+provided that $\vartheta\equiv-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{m}^{\prime}\left(t_{m}^{\ast}\right)}<1$. To see this, differentiate \eqref{eq:foc_deterministic_th} and \eqref{eq:foc_deterministic_tw} with respect to $\alpha$ and solve for $\frac{\partial t_{w}^{\ast}}{\partial\alpha}$ to obtain $\frac{\partial t_{w}^{\ast}}{\partial\alpha}=\frac{U_{h}^{\prime\prime}\text{\ensuremath{\left(t_{h}^{\ast}\right)}}}{U_{w}^{\prime\prime}\text{\ensuremath{\left(t_{w}^{\ast}\right)}}}\frac{\partial t_{h}^{\ast}}{\text{\ensuremath{\partial\alpha}}}$. Substituting this and manipulating, we have: 
 \begin{equation*}
 \frac{\partial t_{h}^{\ast}}{\partial\alpha}=\frac{\frac{\partial\lambda^{\ast}}{\partial\alpha}+TU_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{h}^{\prime\prime}\text{\ensuremath{\left(t_{h}^{\ast}\right)}}+U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)\left(1+\frac{U_{h}^{\prime\prime}\text{\ensuremath{\left(t_{h}^{\ast}\right)}}}{U_{w}^{\prime\prime}\text{\ensuremath{\left(t_{w}^{\ast}\right)}}}\right)}.
 \end{equation*}
-Now, examine $\frac{\partial\left(-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha}$ when the time constraint is binding and when it is not:
+Now, examine \eqref{eq:vot_alpha_det} when the time constraint is binding and when it is not:
 \begin{casenv}
-\item If the constraint is non-binding, then $\lambda^{\ast} = \frac{\partial\lambda^{\ast}}{\partial\alpha} = 0$, hence $\frac{\partial t_{h}^{\ast}}{\partial\alpha}>0$ and 
-\begin{align*}
-\frac{\partial\left(-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha} & =\left(1-\alpha\right)T\frac{U_{h}^{\prime\prime}\text{\ensuremath{\left(t_{h}^{\ast}\right)}}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{h}^{\prime\prime}\text{\ensuremath{\left(t_{h}^{\ast}\right)}}+U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)\left(1+\frac{U_{h}^{\prime\prime}\text{\ensuremath{\left(t_{h}^{\ast}\right)}}}{U_{w}^{\prime\prime}\left(t_{w}^{\ast}\right)}\right)}-U_{m}^{\prime}\left(t_{m}^{\ast}\right)<0,
-\end{align*}
-Hence, the value of travel time decreases with the productivity of in-vehicle time irrespective of the value of $\vartheta$.
-\item If the constraint is binding, then $\frac{\partial t_{h}^{\ast}}{\partial\alpha}=\frac{\partial t_{w}^{\ast}}{\partial\alpha}=0$, $t_{m}^{\ast}=\alpha T$ and $\frac{\partial\lambda}{\partial\alpha}=-TU_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)$. Thus,%
+\item If the constraint is non-binding, then $\lambda^{\ast} = \frac{\partial\lambda^{\ast}}{\partial\alpha} = 0$ and hence $\frac{\partial t_{h}^{\ast}}{\partial\alpha}>0$ and \eqref{eq:vot_alpha_det} holds irrespective of the value of $\vartheta$.
+\item If the constraint is binding, then $\frac{\partial t_{h}^{\ast}}{\partial\alpha}=\frac{\partial t_{w}^{\ast}}{\partial\alpha}=0$, $t_{m}^{\ast}=\alpha T$ and $\frac{\partial\lambda}{\partial\alpha}=-TU_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)$. Thus, \eqref{eq:vot_alpha_det} becomes%
 \begin{equation*}
-\frac{\partial\left(-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha}=-U_{m}^{\prime}\left(t_{m}^{\ast}\right)-t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)<0,\mbox{ if }\vartheta=-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{m}^{\prime}\left(t_{m}^{\ast}\right)}<1.
+\frac{\partial\left(-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha}=-U_{m}^{\prime}\left(t_{m}^{\ast}\right)-t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right) < 0,
 \end{equation*}
+and it holds if $\vartheta=-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{m}^{\prime}\left(t_{m}^{\ast}\right)}<1$.
 \end{casenv}
 Therefore, in general, the value of travel time decreases with the productivity of in-vehicle time provided $\vartheta<1$.
 \end{proof}
@@ -358,9 +353,7 @@ Therefore, the optimum depends on the travel time $T$.
 
 \subsection{Optimal time allocation with random trip duration}
 
-Suppose travel time $T$ is a random variable with a distribution bounded between $0$ and $Q$ \textit{such that the time constraint
-is never exceeded}. We parametrise travel time in a convenient form $T=\mu+\sigma X$, where $\mu$ is its mean, $\sigma$ its standard
-deviation and $X$ is a standardised random variable with zero mean and unit variance and a probability density function $f\left(X\right)$. The bound on the distribution of $T$ implies that the distribution of $X$ is also bounded between $-\frac{\mu}{\sigma}$ and $\frac{Q-\mu}{\sigma}$. 
+Suppose travel time $T$ is a random variable with a distribution bounded between $0$ and $Q$ \textit{such that the time constraint is never exceeded}.\footnote{The commuter takes the trip expecting that he or she will have some time at the destination to carry out the work-based activity. Hence, the travel time should be bounded within a reasonable limit for the trip to be taken. How can we put a bound to the distribution of travel time to take into account this?} We parametrise travel time in a convenient form $T=\mu+\sigma X$, where $\mu$ is its mean, $\sigma$ its standard deviation and $X$ is a standardised random variable with zero mean and unit variance and a probability density function $f\left(X\right)$. The bound on the distribution of $T$ implies that the distribution of $X$ is also bounded between $-\frac{\mu}{\sigma}$ and $\frac{Q-\mu}{\sigma}$. 
 
 Utility is stochastic since it depends on the unknown travel time, $T$. Thus, the exact outcome for a given allocation of time $\left(t_{h},t_{w}\right)$ cannot be determined before the trip. We assume the commuter allocates his/her total time across activities in view of a known travel time distribution. The decision is taken sequentially. Firstly, time at home is optimally allocated between the home-based and mobile activities for any given travel duration and time devoted to the work-based activity. Once travel time is realised upon arrival at work, the commuter optimally allocates the remaining time between the work-based and mobile activities.
 
@@ -368,10 +361,14 @@ We solve the utility maximisation problem by backward induction: Conditional on 
 
 Upon arrival at the destination, the commuter has $Q-T-t_{d}$ time units to be allocated between the mobile and work-based activities.
 As travel time is realised, the commuter faces no uncertainty and his/her problem amounts to:
-\begin{gather*}
-\max_{t_{w}} \, U_{m}\left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X\right) - t_{h} - t_{w}\right) + U_{w}\left(t_{w}\right)\\
-\mbox{s.t. }t_{w}\leq Q-\mu-\sigma X-t_{d}.
-\end{gather*}
+\begin{align}
+\begin{split}
+\max_{t_{w}} & U_{m}\left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X\right) - t_{h} - t_{w}\right) + U_{w}\left(t_{w}\right) \\
+\mbox{s.t. } & t_{w} \leq Q-\mu-\sigma X-t_{d} \\
+ & t_w \geq 0 
+\end{split}
+\label{eq:secondStageProb}
+\end{align}
 The constraint indicates that the time that will be allocated to the work-based activity cannot exceed the total available time at the
 destination. The Lagrangian of the maximisation problem will be%
 \begin{equation*}
@@ -402,7 +399,8 @@ Given the optimal allocation of time at work, the commuter will determine the op
 \begin{align}
 \begin{split}
 \max_{t_{h}} \, & E\left[U_{h}\left(t_{h}\right)+V\left(\hat{t}_{w};t_{h}\right)\right]\\
-& \mbox{subject to } \, t_{h} \leq t_{d}
+& \mbox{subject to } \,\,\, t_{h} \leq t_{d} \\
+& \qquad \quad \quad \quad t_h \geq 0
 \end{split}
 \label{eq:firstStageProblem}
 \end{align}
@@ -424,17 +422,22 @@ E\left[U_{h}^{\prime}\left(t_{h}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\rig
 
 An optimal allocation exists if there is a quartet $\left(\hat{t}_{h},\hat{t}_{w},\hat{\eta},\hat{\phi}\right)$ satisfying the conditions in (\ref{eq:tw_stage}) and (\ref{eq:th_stage}). The existence and uniqueness of such an optimum is given in the following theorem:
 \begin{theorem}
-\label{thm:existence_stochastic}Suppose $T<Q$ and that, for $i=\left\{ h,w,m\right\} $, each utility component $U_{i}$ is increasing, strictly concave and twice-continuously differentiable. Then, there exists an optimal time allocation, $\left(\hat{t}_{h},\hat{t}_{w}\right)$, and multipliers $\hat{\eta}$ and $\hat{\phi}$ satisfying (\ref{eq:tw_stage}) and (\ref{eq:th_stage}). This optimum is is unique.
+\label{thm:existence_stochastic}
+Suppose $0<T<Q$ and each utility component is increasing, strictly concave and twice-continuously differentiable. Then, there exists an optimal time allocation, $\left(\hat{t}_{h},\hat{t}_{w}\right)$, and multipliers $\hat{\eta}$ and $\hat{\phi}$ satisfying (\ref{eq:tw_stage}) and (\ref{eq:th_stage}). This optimum is is unique.
 \end{theorem}
 
+% Since $U_{h}$ and $V$ are strictly concave in $t_{h}$, the objective function in the choice for an optimal $t_{h}$ is also concave. Thus, it has an optimal allocation, say $\left(\hat{t}_{h},\hat{t}_{w}\right)$. Now, The following is needed to prove the existence of an optimal allocation $\left(\hat{t}_{h},\hat{t}_{w}\right)$ and multipliers $\left(\hat{\eta},\hat{\phi}\right)$: (a) $V$ should be concave in $t_{h}$, which is the case for a given $t_{d}$; (b)
+
+
 \begin{proof}
-\textcolor{brown}{The proof for existence and uniqueness at each stage straightforwardly follows the proof of Theorem 1. The main claim to be proved here is the existence and uniqueness of an optimum jointly in the two stages}. We need to show that $V\left(\hat{t}_{w};t_{h}\right)$ is concave in $t_{h}$. Since $U_{h}$ and $V$ are strictly concave in $t_{h}$, the objective function in the choice for an optimal $t_{h}$ is also concave. Thus, it has an optimal allocation, say $\left(\hat{t}_{h},\hat{t}_{w}\right)$.
-Now, The following is needed to prove the existence of an optimal allocation $\left(\hat{t}_{h},\hat{t}_{w}\right)$ and multipliers
-$\left(\hat{\eta},\hat{\phi}\right)$: (a) $V$ should be concave in $t_{h}$, which is the case for a given $t_{d}$; (b)
+The proof for existence of a unique solution $\left( \hat{t}_{w}, \hat{\eta}\right)$ for the problem in \eqref{eq:secondStageProb} and $\left( \hat{t}_{h}, \hat{\phi}\right)$ for the problem in \eqref{eq:firstStageProblem} simply follows from the proof of Theorem \ref{thm:optimum_det}. We want to show the existence of a unique quadruplet $\left( \hat{t}_{h},\hat{t}_{w}, \hat{\eta},\hat{\phi}\right)$ such that $\left( \hat{t}_{w}, \hat{\eta}\right)$ solves the problem in \eqref{eq:secondStageProb} given $\left( \hat{t}_{h},\hat{\phi}\right)$ and $\left( \hat{t}_{h},\hat{\phi}\right)$ solves \eqref{eq:firstStageProblem} given $\left( \hat{t}_{h},\hat{\eta}\right)$. This follows straightforwardly from the proof for Theorem \eqref{thm:optimum_det} if $V\left(\hat{t}_{w};t_{h}\right)$ is strictly concave in $t_{h}$. Since utility is continuous in $t_{h}$, concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) \leq 0$. Through differentiation, we find that%
+\begin{equation*}
+\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) = U_{m}^{\prime\prime} \left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X\right) - t_{h} - \hat{t}_{w} \right) \left( 1 + \frac{\partial\hat{t}_{w}}{\partial t_{h}}\right)
+\end{equation*}
+So, strict concavity holds if $\frac{\partial\hat{t}_{w}}{\partial t_{h}} > -1$. Differentiating \eqref{eq:stage2_wrt_tw} and manipulating, we can easily see that  $\frac{\partial\hat{t}_{w}} {\partial t_{h}} \geq 0$.
 \end{proof}
 
-The optimal allocation and departure times can differ depending on the status of the two time constraints. If the commuter has binding
-constraints at both ends of the trip, then $\hat{t}_{w}=Q-t_{d}-\mu-\sigma X$ and the mobile activity will be carried out only while travelling, hence $\hat{t}_{m}=\alpha\left(\mu+\sigma X\right)$. In this case, the expected marginal utility of time in the mobile activity will be lower than that in the home-based or work-based activities. In addition, $\hat{t}_{h}=t_{d}$, hence the commuter will depart as soon as he/she spent the last minute of the time allocated to the home-based activity. This is also the case with binding constraint at home irrespective of the status of the constraint at work.
+The optimal departure times can differ depending on the status of the two constraints. If the commuter has binding constraints at both ends of the trip, then $\hat{t}_{w}=Q-t_{d}-\mu-\sigma X$ and the mobile activity will be carried out only while travelling, hence $\hat{t}_{m}=\alpha\left(\mu+\sigma X\right)$. In this case, the expected marginal utility of time in the mobile activity will be lower than that in the home-based or work-based activities. In addition, $\hat{t}_{h}=t_{d}$, hence the commuter will depart as soon as he/she spent the last minute of the time allocated to the home-based activity. This is also the case with binding constraint at home irrespective of the status of the constraint at work.
 
 On the other hand, if both the constraints are non-binding, then the marginal expected utility of time will be equalised across the three activities. This is analogous to the case with deterministic travel time. In this case, the optimal departure time can be any moment between $\hat{t}_{h}$ and $Q-\hat{t}_{w}-\mu-\sigma X$.\footnote{Since the exact travel time is unknown before the trip, the optimal departure time may be determined based on a predicted travel time such as the mean, median or other features of the travel time distribution.} This is also the case if the constraint at home is non-binding irrespective of whether the constraint at work is binding. 
 
@@ -447,7 +450,7 @@ W\equiv E\left[U\left(\hat{t}_{h},\hat{t}_{w}\right)\right]=E\left[U_{h}\left(\h
 increases with the productivity of in-vehicle time, $\alpha$. Hence, as was the case with deterministic travel time, an improvement in
 the productivity of in-vehicle time is welfare improving.
 
-\subsection*{Example}
+% \subsection*{Example}
 
 \subsection{The value of time and reliability with random travel time}
 
@@ -564,28 +567,28 @@ The model examines the optimal allocation of time among different activities and
 \clearpage{}
 
 
-Showing the existence of an optimal time allocation follows directly from the proof of Theorem 1 if the optimal expected utility function:
+% Showing the existence of an optimal time allocation follows directly from the proof of Theorem 1 if the optimal expected utility function:
 
-\begin{equation*}
-V\left(\hat{t}_{w};t_{h}\right)\equiv U_{m}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)+U_{w}\left(\hat{t}_{w}\right)+\hat{\eta}\left(Q-\mu-\sigma X-t_{d}-\hat{t}_{w}\right).
-\end{equation*}%
-is concave in $t_{h}$. Since utility is continuous in $t_{h}$, concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right)$. The first derivative is:
-\begin{align*}
-\frac{\partial V}{\partial t_{h}}= & U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)\left(-1-\frac{\hat{t}_{w}}{\partial t_{h}}\right)+U_{w}^{\prime}\left(\hat{t}_{w}\right)\frac{\hat{t}_{w}}{\partial t_{h}}+\hat{\eta}\left(-\frac{t_{d}}{\partial t_{h}}-\frac{\hat{t}_{w}}{\partial t_{h}}\right)\\
-= & -U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)<0
-\end{align*}
-hence,
-\begin{align*}
-\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) & =\frac{\partial}{\partial t_{h}}\left(-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)\right)\\
- & =U_{m}^{\prime\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)\left(1+\frac{\partial\hat{t}_{w}}{\partial t_{h}}\right)
-\end{align*}
-Now, if $\hat{\eta}=0$ then from the first-order condition, we have $U_{w}^{\prime}\left(\hat{t}_{w}\right)=U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)$ and hence
-\begin{equation*}
-\frac{\partial\hat{t}_{w}}{\partial t_{h}}=-\frac{U_{m}^{\prime\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)}{U_{w}^{\prime\prime}\left(\hat{t}_{w}\right)+U_{m}^{\prime\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)}>0
-\end{equation*}
-If $\hat{\eta}>0$ then $t_{d}+t_{w}+T-Q=0$ and hence $\frac{\partial t_{d}}{\partial t_{h}}+\frac{\partial t_{w}}{\partial t_{h}}=0$ if $\frac{\partial t_{d}}{\partial t_{h}}=0$ then $\frac{\partial t_{w}}{\partial t_{h}}=0$. Hence, if $\frac{\partial t_{d}}{\partial t_{h}}$
+% \begin{equation*}
+% V\left(\hat{t}_{w};t_{h}\right)\equiv U_{m}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)+U_{w}\left(\hat{t}_{w}\right)+\hat{\eta}\left(Q-\mu-\sigma X-t_{d}-\hat{t}_{w}\right).
+% \end{equation*}%
+% is concave in $t_{h}$. Since utility is continuous in $t_{h}$, concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right)$. The first derivative is:
+% \begin{align*}
+% \frac{\partial V}{\partial t_{h}}= & U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)\left(-1-\frac{\hat{t}_{w}}{\partial t_{h}}\right)+U_{w}^{\prime}\left(\hat{t}_{w}\right)\frac{\hat{t}_{w}}{\partial t_{h}}+\hat{\eta}\left(-\frac{t_{d}}{\partial t_{h}}-\frac{\hat{t}_{w}}{\partial t_{h}}\right)\\
+% = & -U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)<0
+% \end{align*}
+% hence,
+% \begin{align*}
+% \frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) & =\frac{\partial}{\partial t_{h}}\left(-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)\right)\\
+%  & =U_{m}^{\prime\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)\left(1+\frac{\partial\hat{t}_{w}}{\partial t_{h}}\right)
+% \end{align*}
+% Now, if $\hat{\eta}=0$ then from the first-order condition, we have $U_{w}^{\prime}\left(\hat{t}_{w}\right)=U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)$ and hence
+% \begin{equation*}
+% \frac{\partial\hat{t}_{w}}{\partial t_{h}}=-\frac{U_{m}^{\prime\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)}{U_{w}^{\prime\prime}\left(\hat{t}_{w}\right)+U_{m}^{\prime\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-t_{h}-\hat{t}_{w}\right)}>0
+% \end{equation*}
+% If $\hat{\eta}>0$ then $t_{d}+t_{w}+T-Q=0$ and hence $\frac{\partial t_{d}}{\partial t_{h}}+\frac{\partial t_{w}}{\partial t_{h}}=0$ if $\frac{\partial t_{d}}{\partial t_{h}}=0$ then $\frac{\partial t_{w}}{\partial t_{h}}=0$. Hence, if $\frac{\partial t_{d}}{\partial t_{h}}$
 
-The conclusion is that $V$is concave in $t_{h}$
+% The conclusion is that $V$is concave in $t_{h}$
 
 \clearpage{}
 
