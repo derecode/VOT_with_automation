@@ -225,7 +225,7 @@ If each $U_{i}\left(\cdot\right)$ is continuous, increasing, twice-continuously 
 \end{theorem}
 
 \begin{proof} 
-Since $\mathcal{L}$ is continuous on a closed interval, by the extreme value theorem, there an optimal allocation $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and a multiplier $\lambda^{\ast}$ at which the function attains its maximum. Since the set of feasible time allocations is convex and $U$ is differentiable and strictly concave, the optimal allocation  $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and the multiplier $\lambda^{\ast} $ satisfy the first-order conditions in \eqref{eq:foc_deterministic} and that the optimum is unique \citep[Theorem 1.19 and Theorem 1.20 in][]{delaFonte_mathematical_2000}.
+Since $\mathcal{L}$ is continuous on a closed interval, by the extreme value theorem, there is an optimal allocation $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and a multiplier $\lambda^{\ast}$ at which the function attains its maximum. Since the set of feasible time allocations is convex and $U$ is differentiable and strictly concave, the optimal allocation  $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and the multiplier $\lambda^{\ast} $ satisfy the first-order conditions in \eqref{eq:foc_deterministic} and that the optimum is unique \citep[Theorem 1.19 and Theorem 1.20 in][]{delaFonte_mathematical_2000}.
 \end{proof}
 
 Now consider the commuter's choice of departure time in light of the optimal allocation of time. If the time constraint is binding, the mobile activity will be performed only while travelling since the remaining time, $Q-T$, will be allocated to activities at either end of the trip. Hence, at optimum the commuter departs at time $t_{h}^{\ast}$. On the other hand, if the time constraint is non-binding, i.e., $\lambda^{\ast}=0$, then the commuter undertakes the mobile activity while travelling and at home and/or at work. In this case, the departure time may be any time between $t_{h}^{\ast}$ and $Q-t_{w}^{\ast}-T$. This is so since the effective units of the mobile activity per unit time is the same at home and at work.
@@ -263,14 +263,13 @@ The \textbf{\textit{value of travel time}} is the maximum amount a commuter is w
 \end{split}
 \label{eq:VOT_det}
 \end{align}
-where the second line follows from the first after substituting $\lambda^{\ast}$ by the equivalent expression in \eqref{eq:foc_deterministic_th}. Accordingly, the value of travel time is the sum of the resource value of a unit of time, $\lambda^{\ast}$, and the gain from using this
-saved time to carry out the mobile activity more productively at home or work. Alternatively, it can be interpreted as the gain to the commuter had the saved time been used to carry out the home-based or work-based activity as opposed to undertaking the mobile activity while travelling.
+where the second line follows from the first after substituting $\lambda^{\ast}$ by the equivalent expression in \eqref{eq:foc_deterministic_th}. Accordingly, the value of travel time is the sum of the resource value of a unit of time, $\lambda^{\ast}$, and the gain from using the saved time to carry out the mobile activity more productively at home or at work. Alternatively, it can be interpreted as the gain to the commuter had the saved time been used to carry out the home-based or work-based activity as opposed to undertaking the mobile activity while travelling.
 
 Since $U_{h}^{\prime}\left(t_{h}^{*}\right)\geq U_{m}^{\prime}\left(t_{m}^{\ast}\right)$, the commuter is willing-to-pay some amount for a unit reduction in travel time. The size this amount depends on the status of the time constraint and the level of productivity of in-vehicle time. If the time constraint is non-binding and in-vehicle time is fully productive, then the value travel time will be zero. On the other hand, if the constraint is binding, then the value of travel time is positive even if travel time is fully productive. This is so since, in this case, more time is allocated to the mobile activity than desired. The following proposition states how the value of travel time due to a change in the level of productivity of in-vehicle time. 
 
 
 \begin{prop}
-The value of travel time declines with the productivity of in-vehicle time if the coefficient of risk aversion of $U_{m}$ is lower than 1, i.e., $\vartheta=-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{m}^{\prime}\left(t_{m}^{\ast}\right)}<1$ where $t_{m}^{\ast}=t_{m}\left(t_{h}^{\ast},t_{w}^{\ast}\right)$.
+The value of travel time declines with the productivity of in-vehicle time if $\vartheta = -\frac{t_{m}^{\ast} U_{m}^{\prime\prime} \left( t_{m}^{\ast} \right)} {U_{m}^{\prime}\left( t_{m}^{\ast} \right)}<1$ where $t_{m}^{\ast} = t_{m}\left(t_{h}^{\ast},t_{w}^{\ast}\right)$.
 \end{prop}
 
 
@@ -287,14 +286,22 @@ provided that $\vartheta\equiv-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}
 Now, examine \eqref{eq:vot_alpha_det} when the time constraint is binding and when it is not:
 \begin{casenv}
 \item If the constraint is non-binding, then $\lambda^{\ast} = \frac{\partial\lambda^{\ast}}{\partial\alpha} = 0$ and hence $\frac{\partial t_{h}^{\ast}}{\partial\alpha}>0$ and \eqref{eq:vot_alpha_det} holds irrespective of the value of $\vartheta$.
-\item If the constraint is binding, then $\frac{\partial t_{h}^{\ast}}{\partial\alpha}=\frac{\partial t_{w}^{\ast}}{\partial\alpha}=0$, $t_{m}^{\ast}=\alpha T$ and $\frac{\partial\lambda}{\partial\alpha}=-TU_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)<0$. Thus, \eqref{eq:vot_alpha_det} becomes%
+\item If the constraint is binding, then $t_{m}^{\ast}=\alpha T$ and hence $\frac{\partial t_{h}^{\ast}}{\partial\alpha}=\frac{\partial t_{w}^{\ast}}{\partial\alpha}=0$ and $\frac{\partial\lambda^{\ast}}{\partial\alpha}=-TU_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)<0$. Given this, \eqref{eq:vot_alpha_det} becomes%
 \begin{equation*}
 \frac{\partial\left(-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha}=-U_{m}^{\prime}\left(t_{m}^{\ast}\right)-t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right) < 0,
 \end{equation*}
-which holds if $\vartheta=-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{m}^{\prime}\left(t_{m}^{\ast}\right)}<1$.
+and the inequality holds if $\vartheta=-\frac{t_{m}^{\ast}U_{m}^{\prime\prime}\left(t_{m}^{\ast}\right)}{U_{m}^{\prime}\left(t_{m}^{\ast}\right)}<1$ -- .
 \end{casenv}
 Therefore, in general, the value of travel time decreases with the productivity of in-vehicle time provided $\vartheta<1$.
 \end{proof}
+
+{\color{red} {What is the behavioural implication of having $\vartheta<1$}
+\begin{enumerate}
+    \item slope of indifference curve in the $(Q, T)$ or $(\alpha, T)$ or such space
+    \item for the case where there is travel time risk, this condition may imply that behavioural response is triggered only if the degree of risk aversion is small.
+\end{enumerate}
+    
+}
 
 \subsection*{Example}
 
@@ -426,19 +433,33 @@ E\left[U_{h}^{\prime}\left(t_{h}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\rig
 An optimal allocation exists if there is a quartet $\left(\hat{t}_{h},\hat{t}_{w},\hat{\eta},\hat{\phi}\right)$ satisfying the conditions in (\ref{eq:tw_stage}) and (\ref{eq:th_stage}). The existence and uniqueness of such an optimum is given in the following theorem:
 \begin{theorem}
 \label{thm:existence_stochastic}
-Suppose $0<T<Q$ and each utility component is increasing, strictly concave and twice-continuously differentiable. Then, there exists an optimal time allocation, $\left(\hat{t}_{h},\hat{t}_{w}\right)$, and multipliers $\hat{\eta}$ and $\hat{\phi}$ satisfying (\ref{eq:tw_stage}) and (\ref{eq:th_stage}). This optimum is is unique.
+Suppose $0<T<Q$ and each utility component is increasing, strictly concave and twice-continuously differentiable. Then, there exists a unique optimal time allocation, $\left(\hat{t}_{h},\hat{t}_{w}\right)$, and multipliers $\hat{\eta}$ and $\hat{\phi}$ satisfying (\ref{eq:tw_stage}) and (\ref{eq:th_stage}).
 \end{theorem}
 
 % Since $U_{h}$ and $V$ are strictly concave in $t_{h}$, the objective function in the choice for an optimal $t_{h}$ is also concave. Thus, it has an optimal allocation, say $\left(\hat{t}_{h},\hat{t}_{w}\right)$. Now, The following is needed to prove the existence of an optimal allocation $\left(\hat{t}_{h},\hat{t}_{w}\right)$ and multipliers $\left(\hat{\eta},\hat{\phi}\right)$: (a) $V$ should be concave in $t_{h}$, which is the case for a given $t_{d}$; (b)
 
 
 \begin{proof}
-The proof for existence of a unique solution $\left( \hat{t}_{w}, \hat{\eta}\right)$ for the problem in \eqref{eq:secondStageProb} and $\left( \hat{t}_{h}, \hat{\phi}\right)$ for the problem in \eqref{eq:firstStageProblem} simply follows from the proof of Theorem \ref{thm:optimum_det}. We want to show the existence of a unique quadruplet $\left( \hat{t}_{h},\hat{t}_{w}, \hat{\eta},\hat{\phi}\right)$ such that $\left( \hat{t}_{w}, \hat{\eta}\right)$ solves the problem in \eqref{eq:secondStageProb} given $\left( \hat{t}_{h},\hat{\phi}\right)$ and $\left( \hat{t}_{h},\hat{\phi}\right)$ solves \eqref{eq:firstStageProblem} given $\left( \hat{t}_{h},\hat{\eta}\right)$. This follows straightforwardly from the proof for Theorem \eqref{thm:optimum_det} if $V\left(\hat{t}_{w};t_{h}\right)$ is strictly concave in $t_{h}$. Since utility is continuous in $t_{h}$, concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) \leq 0$. Through differentiation, we find that%
+We want to show the existence of a unique quadruplet $\left( \hat{t}_{h},\hat{t}_{w}, \hat{\eta},\hat{\phi}\right)$ such that $\left( \hat{t}_{w}, \hat{\eta}\right)$ solves the problem in \eqref{eq:secondStageProb} given $\left( \hat{t}_{h},\hat{\phi}\right)$ and $\left( \hat{t}_{h},\hat{\phi}\right)$ solves \eqref{eq:firstStageProblem} given $\left( \hat{t}_{w},\hat{\eta}\right)$. The existence of a unique solution for each problem is given by the proof of Theorem \ref{thm:optimum_det}. The same proof establishes the existence of a unique joint solution if $V\left(\hat{t}_{w};t_{h}\right)$ is strictly concave in $t_{h}$. Since $V$ is continuous in $t_{h}$, strict concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) \leq 0$. To see if this is the case, twice differentiate $V$ to find that%
 \begin{equation*}
 \frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) = U_{m}^{\prime\prime} \left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X\right) - t_{h} - \hat{t}_{w} \right) \left( 1 + \frac{\partial\hat{t}_{w}}{\partial t_{h}}\right)
 \end{equation*}
-So, strict concavity holds if $\frac{\partial\hat{t}_{w}}{\partial t_{h}} > -1$. Differentiating \eqref{eq:stage2_wrt_tw} and manipulating, we can easily see that  $\frac{\partial\hat{t}_{w}} {\partial t_{h}} \geq 0$.
+So, strict concavity holds if $\frac{\partial\hat{t}_{w}}{\partial t_{h}} > -1$. Differentiating \eqref{eq:stage2_wrt_tw} and manipulating, we see that  $\frac{\partial\hat{t}_{w}} {\partial t_{h}} \geq 0$ and hence $V$ is strictly concave. 
+
+% By the proof of Theorem \ref{thm:optimum_det}, there is a unique solution for each of the problems in \eqref{eq:secondStageProb} and  \eqref{eq:firstStageProblem}. If $\left( \hat{t}_{w}, \hat{\eta}\right)$ and $\left( \hat{t}_{h}, \hat{\phi}\right)$ respectively denote these solutions, we want to show the existence of a unique quadruplet $\left( \hat{t}_{h},\hat{t}_{w}, \hat{\eta},\hat{\phi}\right)$ such that $\left( \hat{t}_{w}, \hat{\eta}\right)$ solves the problem in \eqref{eq:secondStageProb} given $\left( \hat{t}_{h},\hat{\phi}\right)$ and $\left( \hat{t}_{h},\hat{\phi}\right)$ solves \eqref{eq:firstStageProblem} given $\left( \hat{t}_{h},\hat{\eta}\right)$. This follows straightforwardly from the proof for Theorem \eqref{thm:optimum_det} if $V\left(\hat{t}_{w};t_{h}\right)$ is strictly concave in $t_{h}$. Since utility is continuous in $t_{h}$, concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) \leq 0$. Through differentiation, we find that%
+% \begin{equation*}
+% \frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) = U_{m}^{\prime\prime} \left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X\right) - t_{h} - \hat{t}_{w} \right) \left( 1 + \frac{\partial\hat{t}_{w}}{\partial t_{h}}\right)
+% \end{equation*}
+% So, strict concavity holds if $\frac{\partial\hat{t}_{w}}{\partial t_{h}} > -1$. Differentiating \eqref{eq:stage2_wrt_tw} and manipulating, we can easily see that  $\frac{\partial\hat{t}_{w}} {\partial t_{h}} \geq 0$.  
+
+% The proof for existence of a unique solution $\left( \hat{t}_{w}, \hat{\eta}\right)$ for the problem in \eqref{eq:secondStageProb} and $\left( \hat{t}_{h}, \hat{\phi}\right)$ for the problem in \eqref{eq:firstStageProblem} simply follows from the proof of Theorem \ref{thm:optimum_det}. We want to show the existence of a unique quadruplet $\left( \hat{t}_{h},\hat{t}_{w}, \hat{\eta},\hat{\phi}\right)$ such that $\left( \hat{t}_{w}, \hat{\eta}\right)$ solves the problem in \eqref{eq:secondStageProb} given $\left( \hat{t}_{h},\hat{\phi}\right)$ and $\left( \hat{t}_{h},\hat{\phi}\right)$ solves \eqref{eq:firstStageProblem} given $\left( \hat{t}_{h},\hat{\eta}\right)$. This follows straightforwardly from the proof for Theorem \eqref{thm:optimum_det} if $V\left(\hat{t}_{w};t_{h}\right)$ is strictly concave in $t_{h}$. Since utility is continuous in $t_{h}$, concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) \leq 0$. Through differentiation, we find that%
+% \begin{equation*}
+% \frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) = U_{m}^{\prime\prime} \left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X\right) - t_{h} - \hat{t}_{w} \right) \left( 1 + \frac{\partial\hat{t}_{w}}{\partial t_{h}}\right)
+% \end{equation*}
+% So, strict concavity holds if $\frac{\partial\hat{t}_{w}}{\partial t_{h}} > -1$. Differentiating \eqref{eq:stage2_wrt_tw} and manipulating, we can easily see that  $\frac{\partial\hat{t}_{w}} {\partial t_{h}} \geq 0$.
 \end{proof}
+
+
 
 The optimal departure times can differ depending on the status of the two constraints. If the commuter has binding constraints at both ends of the trip, then $\hat{t}_{w}=Q-t_{d}-\mu-\sigma X$ and the mobile activity will be carried out only while travelling, hence $\hat{t}_{m}=\alpha\left(\mu+\sigma X\right)$. In this case, the expected marginal utility of time in the mobile activity will be lower than that in the home-based or work-based activities. In addition, $\hat{t}_{h}=t_{d}$, hence the commuter will depart as soon as he/she spent the last minute of the time allocated to the home-based activity. This is also the case with binding constraint at home irrespective of the status of the constraint at work.
 
@@ -450,8 +471,7 @@ The optimal expected utility:
 \begin{equation*}
 W\equiv E\left[U\left(\hat{t}_{h},\hat{t}_{w}\right)\right]=E\left[U_{h}\left(\hat{t}_{h}\right)+U_{m}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-\hat{t}_{h}-\hat{t}_{w}\right)+U_{w}\left(\hat{t}_{w}\right)\right],
 \end{equation*}
-increases with the productivity of in-vehicle time, $\alpha$. Hence, as was the case with deterministic travel time, an improvement in
-the productivity of in-vehicle time is welfare improving.
+increases with the productivity of in-vehicle time, $\alpha$. Hence, as was the case with deterministic travel time, an improvement in the productivity of in-vehicle time is welfare improving.
 
 % \subsection*{Example}
 
@@ -463,13 +483,12 @@ The value of travel time can be obtained by enveloping the optimal expected util
 \begin{alignat*}{1}
 -\frac{\mathrm{d}W}{\mathrm{d}\mu} & =E\left[U_{w}^{\prime}\left(\hat{t}_{w}\right)-\alpha U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-\hat{t}_{h}-\hat{t}_{w}\right)\right]
 \end{alignat*}
-The value of travel time is the difference in the expected marginal utility of time in the work-based activity and the mobile activity,
-with the latter being weighted by the productivity of in-vehicle time relative to time at work or at home. 
+The value of travel time is the difference in the expected marginal utility of time in the work-based activity and the mobile activity, with the latter being weighted by the productivity of in-vehicle time relative to time at work or at home. 
 
-If the constraint at the destination is non-binding and travel time is fully productive, then the value of travel time will be zero. However, if the constraint is binding, then the value travel time will be positive even if travel time is fully productive. This result is similar to the case with deterministic travel time. Note that the value of time is not influenced by the status of the time constraint at the origin.
-\textcolor{brown}{Why?}
+If the constraint at the destination is non-binding and travel time is fully productive, then the value of travel time will be zero. However, if the constraint is binding, then the value travel time will be positive even if travel time is fully productive. This result is similar to the case with deterministic travel time.
+
 \begin{prop}
-The value of travel time decreases with the productivity of in-vehicle time provided that $\vartheta<1$. 
+The value of travel time decreases with the productivity of in-vehicle time provided that $\vartheta<1$
 \end{prop}
 
 \begin{proof}
@@ -477,14 +496,14 @@ We want to show that
 \begin{align*}
 \frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\mu}\right)}{\partial\alpha}= & E\left[\frac{\partial\hat{t}_{w}}{\partial\alpha}U_{w}^{\prime\prime}\left(\hat{t}_{w}\right)+\alpha\left(\frac{\partial\hat{t}_{h}}{\partial\alpha}+\frac{\partial\hat{t}_{w}}{\partial\alpha}-\mu-\sigma X\right)U_{m}^{\prime\prime}\left(\hat{t}_{m}\right)-U_{m}^{\prime}\left(\hat{t}_{m}\right)\right]<0
 \end{align*}
-if $\vartheta<1$. The value of reliability declines with the productivity
+if $\vartheta<1$. The value of travel time declines with the productivity
 of in-vehicle time if $\frac{\partial\hat{t}_{h}}{\partial\alpha}\geq0$,
 $\frac{\partial\hat{t}_{w}}{\partial\alpha}\geq0$ and $-\alpha\left(\mu+\sigma X\right)U_{m}^{\prime\prime}\left(\hat{t}_{m}\right)-U_{m}^{\prime}\left(\hat{t}_{m}\right)<0$.
 To state the latter in terms of $\vartheta$, define $\xi\equiv-\alpha\left(\mu+\sigma X\right)U_{m}^{\prime\prime}\left(\hat{t}_{m}\right)-U_{m}^{\prime}\left(\hat{t}_{m}\right)$
 and $\hat{t}_{m}=\alpha\left(\mu+\sigma X\right)+\epsilon$ where
 $\epsilon\geq0$. Thus,
 \begin{align*}
-\xi & =-\left(\alpha\left(\mu+\sigma X\right)+\epsilon\right)U_{m}^{\prime\prime}\left(\alpha\tau+\epsilon\right)-U_{m}^{\prime}\left(\alpha\left(\mu+\sigma X\right)+\epsilon\right)+\epsilon U_{m}^{\prime\prime}\left(\alpha\left(\mu+\sigma X\right)+\epsilon\right)<0,
+\xi & =-\left(\alpha\left(\mu+\sigma X\right) + \epsilon\right) U_{m}^{\prime\prime}\left(\alpha\tau+\epsilon\right) - U_{m}^{\prime}\left(\alpha\left(\mu + \sigma X\right) + \epsilon\right) + \epsilon U_{m}^{\prime\prime} \left(\alpha\left(\mu + \sigma X\right) + \epsilon\right) < 0,
 \end{align*}
 if $\vartheta+\frac{\epsilon U_{m}^{\prime\prime}\left(\alpha\left(\mu+\sigma X\right)+\epsilon\right)}{U_{m}^{\prime}\left(\alpha\left(\mu+\sigma X\right)+\epsilon\right)}<1$,
 which holds provided that $\vartheta<1$. Thus, it remains to show
@@ -519,8 +538,7 @@ time $\sigma$:
 \begin{align*}
 -\frac{\mathrm{d}W}{\mathrm{d}\sigma} & =E\left[\left(1-\alpha\right)XU_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-\hat{t}_{h}-\hat{t}_{w}\right)\right].
 \end{align*}
-The resulting value indicates the weighted gain in expected utility as the commuter performs the mobile activity at either end of the
-trip as opposed to while travelling, where the weight is the standardised travel time. If travel time is as productive as time at home or at work, then there is no gain in undertaking the mobile activity at home or at work. As a result, the value of reliability is zero if travel time is fully productive. Irrespective of the status of the two time constraints, the value of reliability is non-negative irrespective of the status of the time constraints. \textcolor{brown}{One would expect the value of reliability to be higher with a binding constraint at the destination?} 
+The resulting value indicates the weighted gain in expected utility as the commuter performs the mobile activity at either end of the trip as opposed to while travelling, where the weight is the standardised travel time. If travel time is as productive as time at home or at work, then there is no gain in undertaking the mobile activity at home or at work. As a result, the value of reliability is zero if travel time is fully productive. Irrespective of the status of the two constraints, the value of reliability is non-negative irrespective of the status of the constraints. \textcolor{brown}{One would expect the value of reliability to be higher with a binding constraint at the destination?} 
 \begin{prop}
 The value of reliability is non-negative and it declines with the productivity of in-vehicle time if $\frac{\partial\hat{t}_{m}}{\partial\alpha}\geq0$. 
 \end{prop}
