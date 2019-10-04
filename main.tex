@@ -92,6 +92,7 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{assumption}{Assumption}[section]
 \newtheorem{prop}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
 
 
 \begin{document}
@@ -110,6 +111,12 @@ Self-driving cars make it increasingly possible to carry out some activities whi
 \section{Introduction}
 \label{sec:introduction}
 % by making travel more convenient, more comfortable, or by providing the opportunity to undertake useful economic activity or pleasurable social activity.
+
+% IFT discussion paper [value-saving-travel-time]
+
+In a round-table discussion at ITF, 30 experts from 14 countries identified one of the challenges in the valuation of travel time savings as being the need to account for the quality of travel conditions: The quality component of travel time needs to be incorporated in assessment of the benefits of quicker journey times. The factors that affect the quality of the travel experience include comfort, convenience, frequency, reliability and the possibilities for utilisation of time spent travelling on other activities. In practical terms this means assessing the willingness-to-pay for reduced travel time versus the willingness-to-pay for improvements in travel conditions, and integrating these two assessments in project choice functions (\href{https://www.itf-oecd.org/sites/default/files/docs/value-saving-travel-time.pdf}{Source})
+
+Continued improvements in Information Communication Technology (ITC) and automation, productive use of time .... 
 
 Mobile communication devices are transforming the experience of travel, making it possible to work, play games or watch videos while travelling on planes, trains and buses. The car industry promises to free car drivers from driving, thereby enabling an even more drastic transformation of car travel. This paper explores the observation that the new technologies have in common that they make it possible to carry out activities while travelling that substitute for activities elsewhere, at home or at work.
 
@@ -166,7 +173,7 @@ where utility is assumed to be separable into three components depending on the 
     \end{enumerate}
 \end{assumption}
 
-Describe the meaning of the above assumptions akin \citet{Fosgerau_endogenousscheduling_2017}. Perhaps they can be labelled conditions as well.   
+Describe the meaning of the above assumptions akin \citet{FosgerauSmall2017EndogenousSchedulingPreferences}. Perhaps they can be labelled conditions as well.
 
 Given the travel time $T$, the commuter's problem is allocating the $Q-T$ units of time among the home-based, work-based and mobile activities. If $\left(t_{h},t_{w}\right)$ is chosen, then the amount of time available to the mobile activity will be implied by the time budget. Hence, the commuter's problem amounts to choosing $\left(t_{h},t_{w}\right)$ provided that time spent on all activities, including travelling, be within total time available:  
 \begin{equation}
@@ -181,6 +188,11 @@ The constraint also indicates that some of the time at home and/or at work may b
 (\textbf{time allocation}) A time allocation is a pair $\left(t_{h},t_{w}\right)$ where each $0\leq t_{i}\leq Q$ indicating a commuter's choice of time allocated to the home-based and work-based activities.
 \end{definition}
 
+The modelling framework in our paper is similar to:
+\begin{enumerate}
+    \item \citeauthor{Oort1969EvaluationTravellingTime} in that travel time as such has (dis-)utility
+    \item \citet{DeSerpa1971TheoryEconomicsTime}
+\end{enumerate}
 
 \section{Allocation of time and the value of travel time with deterministic trip duration}
 
@@ -195,17 +207,17 @@ If travel time is known with certainty ahead of the trip, the commuter will take
 \end{aligned}
 \label{eq:maxProb_fixedT}
 \end{equation}
-That is, given some $T$, $\alpha$, and $Q$ the commuter determine the time allocation that maximises utility $U\left( \cdot; T, \alpha, Q \right)$ from among a set of feasible time allocations. 
+That is, given some $T$, $\alpha$, and $Q$ the commuter allocates his time in order to maximise utility $U\left( \cdot; T, \alpha, Q \right)$ from among a set of feasible time allocations. 
 
 \begin{definition}
 (\textbf{feasible time allocation}) A time allocation $\left( t_h, t_w \right)$ is said to be \textbf{\textit{feasible}} if the total time allocated to the home-based and work-based activities does not exceed the commuter's time available for these activities, i.e., $t_h + t_w \leq Q - T$. 
 \end{definition}
 
-Since the constraint is linear, the set of feasible time allocations is convex. The objective function $U$ is strictly concave as it is the sum of strictly concave functions. Thus, the problem in \eqref{eq:maxProb_fixedT} is one of a concave optimisation with a convex constraint set. The Lagrangian for the utility maximisation problem can be written as
+Since the constraint is linear, the set of feasible time allocations is convex. Moreover, the objective function $U$ is strictly concave as it is the sum of strictly concave functions. Thus, \eqref{eq:maxProb_fixedT} is a concave optimisation problem on a convex constraint set. The Lagrangian for the utility maximisation problem can be written as
 \begin{equation*}
 \mathcal{L} \equiv U\left(t_{h},t_{w};T\right) + \lambda \left(Q - T - t_{h} - t_{w}\right)
 \end{equation*}%
-where $\lambda\geq0$ is a Lagrangian multiplier, which indicates the sensitivity of optimal utility with respect to small changes in the time constraint. 
+where $\lambda$ is a non-negative constant indicating the change in optimal utility following a unit relaxation of the time constraint. 
 
 % The feasible set $\Omega = $
 
@@ -220,14 +232,13 @@ U_{w}^{\prime}\left(t_{w}\right)-U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_
 \label{eq:foc_deterministic_lmd} \\
 \lambda,t_{h},t_{w} & \geq 0
 \label{eq:foc_deterministic_nonnega}
-\end{align}
-\label{eq:foc_deterministic}
+\end{align}\label{eq:foc_deterministic}
 \end{subequations}
-These conditions imply that, regardless of the status of the time constraint, the commuter will allocate the total time in such a way that the marginal utility of time is equalised between the home-based and the work-based activities:%
+These conditions imply that, independent of whether the time constraint is binding, the commuter will allocate the total time in such a way that the marginal value of time is equalised between the work-based and home-based activities:%
 \begin{equation}
 U_{h}^{\prime}\left(t_{h}^{\ast}\right)-U_{w}^{\prime}\left(t_{w}^{\ast}\right)=0\label{eq:Uh_eq_Uw}
 \end{equation}%
-where $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ denotes the optimal time allocated to the home-based and work-based activities with the corresponding time allocated to the mobile activity being $t_{m}^{\ast}=t_{m}\left(t_{h}^{\ast},t_{w}^{\ast}\right)$. In addition, optimal allocation with binding constraint requires the marginal utility of time in the mobile activity be lower than that in each of the home-based or work-based activities. The resulting difference in utility will be equal to the resource value of a unit of time, $\lambda$. If the constraint is non-binding , i.e. $\lambda=0$, then the marginal utility of time will be equalised among the three activities. The following theorem establishes the existence of such an optimum.
+where $t_{h}^{\ast}$ and $t_{w}^{\ast}$ respectively denote the time optimally assigned to the home-based and work-based activities with the corresponding time allocated to the mobile activity being $t_{m}^{\ast}=t_{m}\left(t_{h}^{\ast},t_{w}^{\ast}\right)$. In addition, optimal allocation with binding constraint requires the marginal value of time assigned to the mobile activity be lower than that allocated to each of the home-based or work-based activities. The resulting difference in utility is equal to the resource value of time, $\lambda^{\ast}$. If the constraint is non-binding , i.e. $\lambda=0$, then the marginal utility of time will be equalised among the three activities. The following theorem establishes the existence of such an optimum.
 
 \begin{theorem}
 \label{thm:optimum_det}
@@ -235,7 +246,7 @@ If each $U_{i}\left(\cdot\right)$ is continuous, increasing, twice-continuously 
 \end{theorem}
 
 \begin{proof} 
-Since $\mathcal{L}$ is continuous on a closed interval, by the extreme value theorem, there is an optimal allocation $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and a multiplier $\lambda^{\ast}$ at which the function attains its maximum. Since the set of feasible time allocations is convex and $U$ is differentiable and strictly concave, the optimal allocation  $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and the multiplier $\lambda^{\ast} $ satisfy the first-order conditions in \eqref{eq:foc_deterministic} and that the optimum is unique \citep[Theorem 1.19 and Theorem 1.20 in][]{delaFonte_mathematical_2000}.
+Since $\mathcal{L}$ is continuous on a closed interval, by the extreme value theorem, there is an optimal allocation $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and a multiplier $\lambda^{\ast}$ at which the function attains its maximum. Since the set of feasible time allocations is convex and $U$ is differentiable and strictly concave, the optimal allocation  $\left(t_{h}^{\ast},t_{w}^{\ast}\right)$ and the multiplier $\lambda^{\ast} $ satisfy the first-order conditions in \eqref{eq:foc_deterministic} and that the optimum is unique \citep[Theorem 1.19 and Theorem 1.20 in][]{delaFuente2000MathematicalMethodsModels}.
 \end{proof}
 
 Now consider the commuter's choice of departure time in light of the optimal allocation of time. If the time constraint is binding, the mobile activity will be performed only while travelling since the remaining time, $Q-T$, will be allocated to activities at either end of the trip. Hence, at optimum the commuter departs at time $t_{h}^{\ast}$. On the other hand, if the time constraint is non-binding, i.e., $\lambda^{\ast}=0$, then the commuter undertakes the mobile activity while travelling and at home and/or at work. In this case, the departure time may be any time between $t_{h}^{\ast}$ and $Q-t_{w}^{\ast}-T$. This is so since the effective units of the mobile activity per unit time is the same at home and at work.
@@ -262,23 +273,32 @@ Since utility is optimised with respect to $\left(t_{h},t_{w}\right)$, a change 
 
 
 \subsection*{The value of travel time}
-
-% A change in trip duration affects optimal utility through its impact on the time constraint and the effective units of the mobile activity produced. Applying the Envelope Theorem on $U^{\ast}$, we obtain that $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}=\left(\alpha-1\right)U_{m}^{\prime}\left(Q-\left(1-\alpha\right)T-t_{h}^{\ast}-t_{w}^{\ast}\right)-\lambda^{\ast}\leq0$ where the inequality follows since $U_{m}^{\prime}\left(\cdot\right)>0$, $\lambda^{\ast}\geq0$ and $\alpha\leq1$. This implies that a unit reduction in travel time is worth $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}$ to the commuter. Hence, the commuter will be indifferent between forgoing $\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}$ units of money for a unit reduction in travel time. This rate of trade-off between travel time and money is called the value of travel time, which is given by:%
-
-The \textbf{\textit{value of travel time}} is the maximum amount a commuter is willing-to-pay for a unit reduction in travel time. Applying the Envelope Theorem on $U^{\ast}$ and noting that utility is money-metric, the value of travel time in the context of our model is:
-\begin{align}
-\begin{split}
--\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T} & = \left(1 - \alpha\right) U_{m}^{\prime}\left( Q - \left(1 - \alpha\right) T - t_{h}^{\ast} - t_{w}^{\ast}\right) + \lambda^{\ast} \\
-& = U_{w}^{\prime}\left( t_{w}^{*} \right) - \alpha U_{m}^{\prime}\left( Q - \left(1 - \alpha\right) T - t_{h}^{\ast} - t_{w}^{\ast} \right)
-\end{split}
+The \textbf{\textit{value of travel time}} is the maximum amount one is willing-to-pay for a unit reduction in travel time. Applying the Envelope Theorem on $U^{\ast}$ while noting that the marginal utility of income if normalised to zero, the value of travel time in our model is:
+\begin{equation}
+-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}  = \left(1 - \alpha\right) U_{m}^{\prime}\left(t_{m}^{\ast}\right) + \lambda^{\ast} = U_{w}^{\prime}\left(t_{w}^{\ast}\right) - \alpha U_{m}^{\prime}\left(t_{m}^{\ast}\right)
 \label{eq:VOT_det}
-\end{align}
-where the second line follows from the first after substituting $\lambda^{\ast}$ by the equivalent expression in \eqref{eq:foc_deterministic_tw}. Accordingly, the value of travel time is the sum of the resource value of a unit of time, $\lambda^{\ast}$, and the gain from using the saved time to carry out the mobile activity more productively at home or at work. Alternatively, it can be interpreted as the gain to the commuter had the saved time been used to carry out the home-based or work-based activity as opposed to undertaking the mobile activity while travelling.
+\end{equation}
+Hence, the value of travel time is equal to the sum of the resource value of time, $\lambda^{\ast}$, and the gain from performing the mobile activity at home/work as opposed to while travelling. If $U_m^{\prime}\left( \cdot\right)=0$, then the value of travel time equals the resource value of time, which in turn equals the value of time assigned to the work-based activity. This result, which is originally given by \cite{Becker1965TheoryAllocationTime} and \citet{Johnson1966TravelTimePrice}, is based on the assumptions that travel time is unproductive and that travelling as such has no (dis-)utility. The latter is addressed by \citet{Oort1969EvaluationTravellingTime}, who considered travel to be unpleasant and hence allowed it to directly affect utility, and \cite{DeSerpa1971TheoryEconomicsTime}, who incorporated the dis-utility of travelling through technical constraints. Our model does not only account for a potential productive use of in-vehicle time but it also incorporates the dis-utility from travelling so long as this reduces the productivity of in-vehicle time.
 
-The VTT is proportional to $\left( 1 - \alpha \right)$
+% VTT = to the value of changes in time spent in travelling relative to an alternative use of that time
 
-Since $U_{w}^{\prime}\left(t_{w}^{*}\right)\geq U_{m}^{\prime}\left(t_{m}^{\ast}\right)$, the commuter is willing-to-pay some amount for a unit reduction in travel time. The size this amount depends on the status of the time constraint and the level of productivity of in-vehicle time. If the time constraint is non-binding and in-vehicle time is fully productive, then the value travel time will be zero. On the other hand, if the constraint is binding, then the value of travel time is positive even if travel time is fully productive. This is so since, in this case, more time is allocated to the mobile activity than desired. The following proposition states how the value of travel time due to a change in the level of productivity of in-vehicle time. 
+\begin{lemma}
+If travel time is fully productive and the time constraint is non-binding, then the value of travel time is zero.
+\end{lemma}
 
+%Substituting $\lambda^{\ast}$ by the equivalent expression in \eqref{eq:foc_deterministic_tw},  the value of travel time can be given as $U_{w}^{\prime}\left( t_{w}^{*} \right) - \alpha U_{m}^{\prime}\left( t_{m}^{\ast} \right)$, hence the value of reduced travel time is equal to the gain in its value should it be assigned to the work-based activity as opposed to performing the mobile activity while travelling.
+
+Since $\alpha \in \left[0, 1 \right]$ and $U_{m}^{\prime}\left( \cdot \right) > 0$, the value of travel time is non-negative and its size depends on the status of the time constraint and the productivity of in-vehicle time. If the constraint is non-binding and in-vehicle time is fully productive, then the value travel time will be zero. On the other hand, if the constraint is binding, then the value of travel time is positive even if travel time is fully productive. This is so since, in this case, more time is allocated to the mobile activity than desired. The following proposition states how the value of travel time due to a change in the level of productivity of in-vehicle time. 
+
+If $\alpha=0$ or $U_{m} \left( \cdot \right)=0$, then the value of travel time equals just the marginal value of time. The implication of this is that a unit reduction  in travel time will be valued similarly as a relaxation of the time budget ({\color{red} exposition along the lines of \citeauthor{Oort1969EvaluationTravellingTime} and Jara-Diaz 2000.}) 
+
+The following interesting observations are in order.
+
+\begin{enumerate}
+\item The value of travel time being equal to the value of time at work has been indicated before, among others, by \citet{Becker1965TheoryAllocationTime}, \citet{Johnson1966TravelTimePrice}, with the exception of \citet{Oort1969EvaluationTravellingTime} and \cite{DeSerpa1971TheoryEconomicsTime}, the marginal value of time spent travelling is assumed to be zero. Hence, the value of reduced travel time is equal to its value in alternative use. Our result is similar to Oort in that the expression for the VTT is has an additional term, in his work, this emanates from travel time being unpleasant. In our case, the extra term is the loss in value due to reduced travel time as travel time can be productive. 
+\item The VTT is proportional to $\left( 1 - \alpha \right)$ and it is equal to the resource value of time if  $\alpha=1$, then we are back to Johnson and Becker.
+\item 
+\end{enumerate}
 
 \begin{prop}
 The value of travel time declines with the productivity of in-vehicle time if $\vartheta = -\frac{t_{m}^{\ast} U_{m}^{\prime\prime} \left( t_{m}^{\ast} \right)} {U_{m}^{\prime}\left( t_{m}^{\ast} \right)}<1$ where $t_{m}^{\ast} = t_{m}\left(t_{h}^{\ast},t_{w}^{\ast}\right)$.
@@ -320,7 +340,7 @@ Further enrich this section based on Mogens' slide on \textbf{Zero Value of Trav
 
 \subsection*{Numerical example}
 
-In this section we illustrate how the model behaves based on particular functional forms and parameter values. Follow the exposition in \citet{Fosgerau_endogenousscheduling_2017} from page 298.
+In this section we illustrate how the model behaves based on particular functional forms and parameter values. Follow the exposition in \citet{FosgerauSmall2017EndogenousSchedulingPreferences} from page 298.
 
 Consider a commuter with a time budget of $Q=1$ time units and trip utility:
 \begin{align*}
@@ -467,15 +487,15 @@ Suppose $0<T<Q$ and each utility component is increasing, strictly concave and t
 
 
 \begin{proof}
-We want to show the existence of a unique quadruplet $\left( \hat{t}_{h},\hat{t}_{w}, \hat{\eta},\hat{\phi}\right)$ such that $\left( \hat{t}_{w}, \hat{\eta}\right)$ solves the problem in \eqref{eq:secondStageProb} given $\left( \hat{t}_{h},\hat{\phi}\right)$ and $\left( \hat{t}_{h},\hat{\phi}\right)$ solves \eqref{eq:firstStageProblem} given $\left( \hat{t}_{w},\hat{\eta}\right)$. The existence of a unique solution for each problem is given by the proof of Theorem \ref{thm:optimum_det}. The same proof establishes the existence of a unique joint solution if $V\left(\hat{t}_{w};t_{h}\right)$ is strictly concave in $t_{h}$. Since $V$ is continuous in $t_{h}$, strict concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) \leq 0$. To see if this is the case, twice differentiate $V$ to find that%
+We want to show the existence of a unique quadruplet $\left( \hat{t}_{h},\hat{t}_{w}, \hat{\eta},\hat{\phi}\right)$ such that $\left( \hat{t}_{w}, \hat{\eta}\right)$ solves \eqref{eq:secondStageProb} given $\left( \hat{t}_{h},\hat{\phi}\right)$ and $\left( \hat{t}_{h},\hat{\phi}\right)$ solves \eqref{eq:firstStageProblem} given $\left( \hat{t}_{w},\hat{\eta}\right)$. The existence of a unique solution for each problem is given by the proof of Theorem \ref{thm:optimum_det}. The same proof establishes the existence of a unique joint solution if $V\left(\hat{t}_{w};t_{h}\right)$ is strictly concave in $t_{h}$. Since $V$ is continuous in $t_{h}$, strict concavity follows if $\frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) \leq 0$. To see if this is the case, twice differentiate $V$ to find that%
 \begin{equation*}
 \frac{\partial}{\partial t_{h}}\left(\frac{\partial V}{\partial t_{h}}\right) = U_{m}^{\prime\prime} \left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X\right) - t_{h} - \hat{t}_{w} \right) \left( 1 + \frac{\partial\hat{t}_{w}}{\partial t_{h}}\right)
 \end{equation*}
-So, strict concavity holds if $\frac{\partial\hat{t}_{w}}{\partial t_{h}} > -1$. Differentiating \eqref{eq:stage2_wrt_tw} and manipulating, we see that  $\frac{\partial\hat{t}_{w}} {\partial t_{h}} \geq 0$ and hence $V$ is strictly concave. 
+So, strict concavity holds if $\frac{\partial\hat{t}_{w}}{\partial t_{h}} > -1$. Differentiating \eqref{eq:stage2_wrt_tw} and manipulating, we see that  $\frac{\partial\hat{t}_{w}} {\partial t_{h}} \geq 0$ and hence $V$ is strictly concave.
 \end{proof}
 
 
-The optimal departure times can differ depending on the status of the two constraints. If the commuter has binding constraints at both ends of the trip, then $\hat{t}_{w}=Q-t_{d}-\mu-\sigma X$ and the mobile activity will be carried out only while travelling, hence $\hat{t}_{m}=\alpha\left(\mu+\sigma X\right)$. In this case, the expected marginal utility of time in the mobile activity will be lower than that in the home-based or work-based activities. In addition, $\hat{t}_{h}=t_{d}$, hence the commuter will depart as soon as he/she spent the last minute of the time allocated to the home-based activity. This is also the case with binding constraint at home irrespective of the status of the constraint at work.
+The commuter chooses an optimal departure time given the optimal allocation time. This choice depends on the status of the two constraints: If the commuter has binding constraints at both ends of the trip, then $\hat{t}_{w}=Q-t_{d}-\mu-\sigma X$ and the mobile activity will be carried out only while travelling, hence $\hat{t}_{m}=\alpha\left(\mu+\sigma X\right)$. In this case, the expected marginal utility of time in the mobile activity will be lower than that in the home-based or work-based activities. In addition, $\hat{t}_{h}=t_{d}$, hence the commuter will depart as soon as he/she spent the last minute of the time allocated to the home-based activity. This is also the case with binding constraint at home irrespective of the status of the constraint at work.
 
 On the other hand, if both the constraints are non-binding, then the marginal expected utility of time will be equalised across the three activities. This is analogous to the case with deterministic travel time. In this case, the optimal departure time can be any moment between $\hat{t}_{h}$ and $Q-\hat{t}_{w}-\mu-\sigma X$.\footnote{Since the exact travel time is unknown before the trip, the optimal departure time may be determined based on a predicted travel time such as the mean, median or other features of the travel time distribution.} This is also the case if the constraint at home is non-binding irrespective of whether the constraint at work is binding. 
 
@@ -497,12 +517,11 @@ The value of travel time can be obtained by enveloping the optimal expected util
 \begin{alignat*}{1}
 -\frac{\mathrm{d}W}{\mathrm{d}\mu} & = E\left[ U_{w}^{\prime}\left( \hat{t}_{w} \right) - \alpha U_{m}^{\prime}\left( Q - \left(1 - \alpha \right) \left( \mu + \sigma X \right) - \hat{t}_{h} - \hat{t}_{w} \right)\right]
 \end{alignat*}
-The value of travel time is the difference in the expected marginal utility of time in the work-based activity and the mobile activity, with the latter being weighted by the productivity of in-vehicle time relative to time at work or at home. 
+Algebraically, the value of travel time equals the difference in the expected value of time assigned to the work-based activity and that assigned to the mobile activity. 
 
-% \begin{prop}
-% The value of travel time is non-negative and 
-% \end{prop}
+The value of travel time is analogous to the case with random travel time. The only difference is that the expected  value operator since travel time is uncertain. 
 
+We now examine the value of travel time with respect to the productivity of in-vehicle time for commuters with and without binding time constraints. If in-vehicle time is fully productive, i.e., $\alpha=1$,  then the value of travel time for commuters with non-binding constraints equals zero\footnote{This may be similar to a finding where leisure ... } while those with binding constraints will have a positive value of travel time. This result is similar to the case with deterministic travel time and it indicates that ... 
 
 If the constraint at the destination is non-binding and travel time is fully productive, then the value of travel time will be zero. However, if the constraint is binding, then the value travel time will be positive even if travel time is fully productive. This result is similar to the case with deterministic travel time.
 
@@ -546,13 +565,13 @@ Note the following:
 
 \subsection*{The value of reliability }
 \begin{definition}
-(\textbf{VOR}) The \textbf{\textit{value of reliability}} refers to the maximum amount a commuter is willing-to-pay for a unit reduction in the standard deviation of travel time. In our model, the value of reliability is given as $-\frac{\mathrm{d}W}{\mathrm{d}\sigma}$.
+(\textbf{VOR}) The \textbf{\textit{value of reliability}} refers to the maximum amount one is willing-to-pay for a unit reduction in the standard deviation of travel time. In our model, the value of reliability is given as $-\frac{\mathrm{d}W}{\mathrm{d}\sigma}$.
 \end{definition}
 The value of reliability can be derived by differentiating the optimal expected utility with respect to the standard deviation of travel time $\sigma$: 
 \begin{align*}
 -\frac{\mathrm{d}W}{\mathrm{d}\sigma} & =E\left[\left( 1 - \alpha \right) X U_{m}^{\prime} \left(Q - \left(1 - \alpha\right) \left(\mu + \sigma X \right) - \hat{t}_{h} - \hat{t}_{w}\right)\right].
 \end{align*}
-The resulting value indicates the weighted gain in expected utility as the commuter performs the mobile activity at home/work as opposed to while travelling, where the weight is the standardised travel time. If travel time is as productive as time at home or at work, then there is no gain in undertaking the mobile activity at home or at work. As a result, the value of reliability is zero if travel time is fully productive. The value of reliability is non-negative irrespective of the status of the constraints.
+The value of reliability indicates the expected monetary gain as the commuter performs the mobile activity at home/work as opposed to while travelling. If travel time is as productive as time at home or at work, then there is no gain in undertaking the mobile activity at home/work. As a result, the value of reliability will be zero if travel time is fully productive. The value of reliability is non-negative irrespective of the status of the constraints.
 
 \begin{prop}
 The value of reliability is non-negative and it declines with the productivity of in-vehicle time if $\frac{\partial\hat{t}_{m}}{\partial\alpha}\geq0$. 
@@ -579,7 +598,7 @@ Noting that $E\left[X\right]=0$ such that $E\left[X\vert X\leq0\right]=-E\left[X
  & =\left(1-\alpha\right)\left(v_{1}-v_{2}\right)E\left[X\vert X>0\right]\\
  & \geq0
 \end{align*}
-since $v_{1}\geq v_{2}$ and $E\left[X\vert X>0\right]$. Therefore, the value of reliability is non-negative.
+the inequality follows since $v_{1}\geq v_{2}$ and $E\left[X\vert X>0\right]$. Therefore, the value of reliability is non-negative.
 Moreover, we intend to show that
 \begin{align*}
 \frac{\partial\left(-\frac{\mathrm{d} W} {\mathrm{d} \sigma} \right)} {\partial\alpha} & = E\left[X\left(\left(1-\alpha\right)\left(\mu+\sigma X - \frac{\partial\hat{t}_{h}} {\partial\alpha}-\frac{\partial\hat{t}_{w}} {\partial\alpha} \right) U_{m}^{\prime\prime} \left(\hat{t}_{m} \right) - U_{m}^{\prime}\left( \hat{t}_{m} \right)\right)\right] < 0
@@ -600,7 +619,8 @@ The model examines the optimal allocation of time among different activities and
 
 \clearpage
 
-\bibliographystyle{authordate1}
+% \bibliographystyle{authordate1}
+\bibliographystyle{chicago}
 \bibliography{references}
 
 \end{document}
