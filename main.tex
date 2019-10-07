@@ -96,7 +96,7 @@
 
 
 \begin{document}
-\title{Allocation of time and the values of travel time and reliability with automated cars}
+\title{Allocation and the values of travel time and reliability with automated cars}
 
 \author{Dereje Abegaz \and Mogens Fosgerau}
 
@@ -135,13 +135,13 @@ The rest of the paper is organised as follows. The next section sets out the mod
 \label{sec:model1}
 
 % By a \textit{home-based activity} we refer to leisure and work activities that can only be carried out at home
-Consider a commuter who begins a day at home and who has to take a trip to a workplace where he finishes the day. The commuter has a time budget of $Q$ time units on the clock interval $[0, Q]$ and intends to allocate this between leisure and work. Suppose both leisure and work activities can be carried out while travelling and that the work (leisure) activity cannot be undertaken at home (work). We refer to leisure and work activities that can only be carried out at home and at work as \emph{home-based activity} and \emph{work-based activities}, respectively. As such, leisure and work activities are characterised in terms of whether they can be undertaken at home, at work, or while travelling. We use the term \textit{mobile activities} to refer to work and leisure activities which the commuter may carry out at home, at work and while travelling.
+Consider a commuter who begins a day at home and who has to take a trip to a workplace where he finishes the day. The commuter has a time budget of $Q$ time units on the clock interval $[0, Q]$ and intends to allocate this between leisure and work. Suppose some leisure and work activities can be carried out while travelling and that the work (leisure) activity cannot be undertaken at home (work). We refer to leisure and work activities that can only be carried out at home and at work as \emph{home-based activity} and \emph{work-based activities}, respectively. As such, leisure and work activities are characterised in terms of whether they can be undertaken at home, at work, or while travelling. We use the term \textit{mobile activities} to refer to work and leisure activities which the commuter may carry out at home, at work and while travelling.
 
-Let $T<Q$ be the travel time for the commute trip. After setting aside $T$ units of time for travelling, suppose the commuter is free to allocate the remaining $Q-T$ units of time among the three activities. Let $t_{h}$ and $t_{w}$ respectively denote the time allocated to the home-based and work-based activities such that $0<t_{h}\leq t_{d}$ and $0<t_{w}\leq Q-t_{d}-T$ where $t_d$ the departure time for the commute trip. Hence,  $T+\left(t_{d}-t_{h}\right)+\left(Q-t_{d}-T-t_{w}\right)$ units of time will be available to carry out the mobile activity. 
+Let $0<T<Q$ be the travel time for the commute trip. After setting aside $T$ units of time for travelling, suppose the commuter is free to allocate the remaining $Q-T$ units of time among the three activities. Let $t_{h}$ and $t_{w}$ respectively denote the time allocated to the home-based and work-based activities such that $0<t_{h}\leq t_{d}$ and $0<t_{w}\leq Q-t_{d}-T$ where $t_d$ is the departure time for the commute trip. Hence,  $T+\left(t_{d}-t_{h}\right)+\left(Q-t_{d}-T-t_{w}\right)$ units of time will be available to carry out the mobile activity. 
 
-% Suppose that consumer choices are made so as to maximize expected utility under budget constraint.
+% Suppose that consumer choices are made so as to maximise expected utility under budget constraint.
 
-The commuter has preferences over outcomes produced as a result of the three activities.\footnote{The trip to work can be considered as an additional activity, however, it does not lead to the production of output in itself.} Given those preferences, the commuter allocates the total time as to obtain the best result among those available. Suppose a unit of output is produced per unit of time used in the home-based or work-based activities while the productivity of time in the mobile activity depends on whether the activity is undertaken at home, at work or while travelling. Suppose the commuter is fully productive in performing the mobile activity at home or at work but may be less so while travelling. This is controlled by a factor $\alpha \in \left[0, 1\right]$, such that the amount of output per unit time spent in performing the mobile activity is $t_{m} = Q - \left( 1 - \alpha \right) T - t_{h}-t_{w}$. The parameter $\alpha$ indicates the productivity of in-vehicle time relative to time at work or at home.\footnote{The range of activities that can be performed during a trip depends on the degree of automation of the vehicle.}
+The commuter has preferences over outcomes produced as a result of the three activities.\footnote{The trip to work can be considered as an additional activity, however, it does not lead to the production of output in itself.} Given those preferences, the commuter allocates the total time so as to obtain the best result among those available. Suppose a unit of output is produced per unit of time assigned to the home-based or work-based activities while the productivity of time in the mobile activity depends on whether the activity is undertaken at home, at work or while travelling. Suppose the commuter is fully productive in performing the mobile activity at home or at work but may be less so while travelling. This is controlled by a factor $\alpha \in \left[0, 1\right]$, such that the amount of output per unit time spent in performing the mobile activity is $t_{m} = Q - \left( 1 - \alpha \right) T - t_{h}-t_{w}$. The parameter $\alpha$ indicates the productivity of in-vehicle time relative to time at work or at home.\footnote{The range of activities that can be performed during a trip depends on the degree of automation of the vehicle.}
 
 % \begin{figure}[ht!]
 %     \centering
@@ -159,7 +159,7 @@ We represent the commuter's preferences using a money-metric utility function:%
 U\left(t_{h},t_{w};T\right)=U_{h}\left(t_{h}\right)+U_{w}\left(t_{w}\right)+U_{m}\left(Q-\left(1-\alpha\right)T-t_{h}-t_{w}\right),
 \label{utility0}
 \end{equation}
-where utility is assumed to be separable into three components depending on the activities in which time is spent. We assume that each utility component is continuous, increasing, strictly concave and twice-continuously differentiable. We further assume that $U_{h}^{\prime}\left(0\right) = U_{w}^{\prime}\left(0\right) = \infty$ and $U_{m}^{\prime}\left(0\right)<\infty$, such that the commuter may choose not to carry out any of the mobile activity.
+where utility is assumed to be additively separable into three components depending on the activities in which time is spent. We assume that each utility component is continuous, increasing, strictly concave and twice-continuously differentiable. We further assume that $U_{h}^{\prime}\left(0\right) = U_{w}^{\prime}\left(0\right) = \infty$ and $U_{m}^{\prime}\left(0\right)<\infty$, such that the commuter may choose not to carry out any of the mobile activity.
 
 \begin{assumption}
     For $j=\{h,w,m\}$: 
@@ -185,7 +185,7 @@ The constraint also indicates that some of the time at home and/or at work may b
 % reduce the dimension of the time allocation problem by one -- now just in (t_h, t_w) so t_m is deduced from the time constraint 
 
 \begin{definition}
-(\textbf{time allocation}) A time allocation is a pair $\left(t_{h},t_{w}\right)$ where each $0\leq t_{i}\leq Q$ indicating a commuter's choice of time allocated to the home-based and work-based activities.
+(\textbf{time allocation}) A time allocation is a pair $\left(t_{h},t_{w}\right)$ where each $0\leq t_{i}\leq Q-T$ indicating a commuter's choice of time allocated to the home-based and work-based activities.
 \end{definition}
 
 The modelling framework in our paper is similar to:
@@ -290,7 +290,7 @@ If travel time is fully productive and the time constraint is non-binding, then 
 
 Since $\alpha \in \left[0, 1 \right]$ and $U_{m}^{\prime}\left( \cdot \right) > 0$, the value of travel time is non-negative and its size depends on the status of the time constraint and the productivity of in-vehicle time. If the constraint is non-binding and in-vehicle time is fully productive, then the value travel time will be zero. On the other hand, if the constraint is binding, then the value of travel time is positive even if travel time is fully productive. This is so since, in this case, more time is allocated to the mobile activity than desired. The following proposition states how the value of travel time due to a change in the level of productivity of in-vehicle time. 
 
-If $\alpha=0$ or $U_{m} \left( \cdot \right)=0$, then the value of travel time equals just the marginal value of time. The implication of this is that a unit reduction  in travel time will be valued similarly as a relaxation of the time budget ({\color{red} exposition along the lines of \citeauthor{Oort1969EvaluationTravellingTime} and Jara-Diaz 2000.}) 
+If $\alpha=0$ or $U_{m} \left( \cdot \right)=0$, then the value of travel time equals just the marginal value of time. The implication of this is that a unit reduction in travel time will be valued equally as a unit relaxation of the time budget ({\color{red} exposition along the lines of \citeauthor{Oort1969EvaluationTravellingTime} and Jara-Diaz 2000.}) 
 
 The following interesting observations are in order.
 
