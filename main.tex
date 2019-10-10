@@ -591,9 +591,10 @@ The value of reliability in our model equals the weighted average gain as the co
 \end{align*}
 Thus, if in-vehicle time is as productive as time at work, then the commuter does not gain by performing the mobile activity at work as opposed to while travelling. Hence, the value of reliability will be zero if in-vehicle time is fully productive. The value of reliability is non-negative irrespective of the status of the constraints.
 
-\begin{prop}
-The value of reliability is non-negative and it declines with the productivity of in-vehicle time. 
-\end{prop}
+
+\begin{lemma}
+Independent of whether both time constraints are binding or not, the value of reliability is non-negative. 
+\end{lemma}
 
 \begin{proof}
 To show that the value of reliability is non-negative, let
@@ -604,7 +605,7 @@ v_{1} & \mbox{ if X > 0}\\
 v_{2} & \mbox{ if } X \leq 0
 \end{cases}
 \end{equation*}%
-where $v_{1}$ and $v_{2}$ are positive constants with $v_{1}\geq v_{2}$ since $\frac{\partial U_{m}^{\prime}\left(\hat{t}_{m}\right)}{\partial X} \geq 0$. Using this, the value of reliability can be given as,%
+where $v_{1}$ and $v_{2}$ are positive constants with $v_{1}\geq v_{2}$ since $\frac{\partial U_{m}^{\prime}\left(\hat{t}_{m}\right)}{\partial X} \geq 0$. Using this, the value of reliability can be given as
 \begin{align*}
 -\frac{\mathrm{d}W}{\mathrm{d}\sigma} & =E\left[\left(1-\alpha\right)XU_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-\hat{t}_{h}-\hat{t}_{w}\right)\vert X>0\right]\\
  & \qquad+E\left[\left(1-\alpha\right)XU_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-\hat{t}_{h}-\hat{t}_{w}\right)\vert X\leq0\right]\\
@@ -617,8 +618,37 @@ Noting that $E\left[X\right]=0$ such that $E\left[X\vert X\leq0\right]=-E\left[X
  & =\left(1-\alpha\right)\left(v_{1}-v_{2}\right)E\left[X\vert X>0\right]\\
  & \geq0
 \end{align*}
-the inequality follows since $v_{1}\geq v_{2}$ and $E\left[X\vert X>0\right]$. Therefore, the value of reliability is non-negative.
+where the inequality follows since $v_{1}\geq v_{2}$ and $E\left[X\vert X>0\right]$. Therefore, the value of reliability is non-negative when both time constraints are binding or when they are not.
+\end{proof}
 
+
+\begin{prop}
+The value of reliability is non-negative and it declines with the productivity of in-vehicle time. 
+\end{prop}
+
+\begin{proof}
+% To show that the value of reliability is non-negative, let
+% \begin{equation*}
+% U_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-\hat{t}_{h}-\hat{t}_{w}\right) =
+% \begin{cases}
+% v_{1} & \mbox{ if X > 0}\\
+% v_{2} & \mbox{ if } X \leq 0
+% \end{cases}
+% \end{equation*}%
+% where $v_{1}$ and $v_{2}$ are positive constants with $v_{1}\geq v_{2}$ since $\frac{\partial U_{m}^{\prime}\left(\hat{t}_{m}\right)}{\partial X} \geq 0$. Using this, the value of reliability can be given as,%
+% \begin{align*}
+% -\frac{\mathrm{d}W}{\mathrm{d}\sigma} & =E\left[\left(1-\alpha\right)XU_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-\hat{t}_{h}-\hat{t}_{w}\right)\vert X>0\right]\\
+%  & \qquad+E\left[\left(1-\alpha\right)XU_{m}^{\prime}\left(Q-\left(1-\alpha\right)\left(\mu+\sigma X\right)-\hat{t}_{h}-\hat{t}_{w}\right)\vert X\leq0\right]\\
+%  & =E\left[\left(1-\alpha\right)v_{1}X\vert X>0\right]+E\left[\left(1-\alpha\right)v_{2}X\vert X\leq0\right]
+% \end{align*}%
+% Noting that $E\left[X\right]=0$ such that $E\left[X\vert X\leq0\right]=-E\left[X\vert X>0\right]$, we have
+% \begin{align*}
+% -\frac{\mathrm{d}W}{\mathrm{d}\sigma} & =\left(1-\alpha\right)v_{1}E\left[X\vert X>0\right]+\left(1-\alpha\right)v_{2}E\left[X\vert X\leq0\right]\\
+%  & =\left(1-\alpha\right)v_{1}E\left[X\vert X>0\right]-\left(1-\alpha\right)v_{2}E\left[X\vert X>0\right]\\
+%  & =\left(1-\alpha\right)\left(v_{1}-v_{2}\right)E\left[X\vert X>0\right]\\
+%  & \geq0
+% \end{align*}
+% the inequality follows since $v_{1}\geq v_{2}$ and $E\left[X\vert X>0\right]$. Therefore, the value of reliability is non-negative.
 To show whether the value of reliability declines with the productivity of in-vehicle time, we examine the derivative when the constraint is binding and when it is not. If both constraints are non-binding, then $\hat{\eta}=\hat{\phi}=0$ and hence 
 \begin{align*}
 \frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\sigma}\right)}{\partial\alpha} &= E\left[\left(\left(1-\alpha\right)\left(\mu+\sigma X\right) \frac{\prod_{i \in \left\{ h,w,m\right\}  }U_{i}^{\prime\prime}\left(\hat{t}_{i}\right)}{\sum_{i\neq j}U_{i}^{\prime\prime}\left(\hat{t}_{i}\right)U_{j}^{\prime\prime}\left(\hat{t}_{j}\right)}-U_{m}^{\prime}\left(\hat{t}_{m}\right)\right)X\right] \leq 0
