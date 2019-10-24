@@ -87,7 +87,6 @@
 \newtheorem{assumption}{Assumption}[section]
 \newtheorem{prop}{Proposition}[section]
 \newtheorem{lemma}{Lemma}[section]
-\newtheorem{condition}{Condition}[section]
 
 \graphicspath{{graphs/}}
 
@@ -103,9 +102,7 @@
 \maketitle
 
 \begin{abstract}
-Automated vehicles make it increasingly possible to carry out productive work and private enjoyment while travelling. This paper analyses a commuter's optimal allocation of time among different activities and the implication of a productive use of in-vehicle time on the commuter's valuation of travel time and reliability. We showed the existence of an optimal time allocation and examined how the values of travel time and reliability change as the productivity of in-vehicle time increases due highly automated vehicles and other technological advances. Our results indicate that individuals may be unwilling to pay for a reduction in travel time variability and mean travel time if in-vehicle time as productive as time out of the vehicle.  
-
-%Results in this paper indicate that the value of travel time declines with the productivity of in-vehicle time and that it equals zero if the commuter does not have binding time constraints. We also discussed the implication of the productive use of time on the willingness to pay for an increase in the degree of automation of the vehicle and other technologies advances that can enhance the productivity of in-vehicle time.
+Automated vehicles make it increasingly possible to carry out useful activities while travelling. This paper analyses a commuter's optimal allocation of time among different activities and the implication of a productive use of in-vehicle time on the commuter's valuation of travel time and reliability. We showed the existence of an optimal time allocation. Results in this paper indicate that the value of travel time declines with the productivity of in-vehicle time and that it equals zero if the commuter does not have binding time constraints at home and work. We also discussed the implication of the productive use of time on the willingness to pay for an increase in the degree of automation of the vehicles and other technologies advances that can enhance the productivity of in-vehicle time.
 \end{abstract}
 
 \section{Introduction}
@@ -114,22 +111,19 @@ Automated vehicles make it increasingly possible to carry out productive work an
 
 % IFT discussion paper [value-saving-travel-time]
 
-%In a round-table discussion at ITF, 30 experts from 14 countries identified one of the challenges in the valuation of travel time savings as being the need to account for the quality of travel conditions: The quality component of travel time needs to be incorporated in assessment of the benefits of quicker journey times. The factors that affect the quality of the travel experience include comfort, convenience, frequency, reliability and the possibilities for utilisation of time spent travelling on other activities. In practical terms this means assessing the willingness-to-pay for reduced travel time versus the willingness-to-pay for improvements in travel conditions, and integrating these two assessments in project choice functions (\href{https://www.itf-oecd.org/sites/default/files/docs/value-saving-travel-time.pdf}{Source})
+In a round-table discussion at ITF, 30 experts from 14 countries identified one of the challenges in the valuation of travel time savings as being the need to account for the quality of travel conditions: The quality component of travel time needs to be incorporated in assessment of the benefits of quicker journey times. The factors that affect the quality of the travel experience include comfort, convenience, frequency, reliability and the possibilities for utilisation of time spent travelling on other activities. In practical terms this means assessing the willingness-to-pay for reduced travel time versus the willingness-to-pay for improvements in travel conditions, and integrating these two assessments in project choice functions (\href{https://www.itf-oecd.org/sites/default/files/docs/value-saving-travel-time.pdf}{Source})
 
-%Continued improvements in Information Communication Technologies (ICT) and automation, productive use of time ....
-
-\todo[inline]{Skip this section - it is still being developed}
+Continued improvements in Information Communication Technology (ITC) and automation, productive use of time ....
 
 Mobile communication devices are transforming the experience of travel, making it possible to work, play games or watch videos while travelling on planes, trains and buses. The car industry promises to free car drivers from driving, thereby enabling an even more drastic transformation of car travel. This paper explores the observation that the new technologies have in common that they make it possible to carry out activities while travelling that substitute for activities elsewhere, at home or at work.
 
 In-vehicle productivity increases when it becomes possible to do things while travelling that were not possible before. This has happened for passengers in trains and buses, who now can use mobile devices  to do new things. It is happening also in planes where internet access during flight is gradually becoming available. Of course, car manufacturers are promising that soon car drivers can be relieved from driving.
 
-This paper looks at the impact of increasing in-vehicle productivity on allocation of commuter's time across different activities and the values of time and reliability. This is of fundamental importance in transport economics and modelling. The values of travel time and reliability are important behavioural quantities as they represent the lion's share of benefits from large public infrastructure projects.
+This paper looks at the impact of increasing in-vehicle productivity on allocation of commuter's time across different activities and the values of time and reliability. This is of fundamental importance in transport economics and modelling. The values of travel time and reliability are important behavioural quantities as they represent the lion's share of benefits from large infrastructure projects.
 
-We built a model that examines how a commuter allocates his or her time budget among different activities where some of these activities can only be carried out at home or work while others can be performed at either location and while travelling. We showed existence of an optimal allocation of time and examine how the values of travel time and variability change with the possibility of productive use of in-vehicle time.
+We built a model that examines how a commuter optimally allocates his/her time budget among different a activities where some of these activities can only be carried out at home or work. We showed existence of an optimal allocation of time and analysed the optimal scheduling choice in the presence of deterministic and random travel times. We also examined how the values of travel time and reliability change with increasing productivity of in-vehicle time.
 
-\nocite{vandenBergVerhoef2016AutonomousCarsDynamic}
-
+Non-work related may include talking on the phone, reading and writing, eating and drinking, planning things, looking through the window, relaxing, watching videos, and work related activities include writing, reading, talking on the phone, planning, video conferencing, etc.
 
 The rest of the paper is organised as follows. The next section sets out the model set up and foundation for the rest of the paper. The third and fourth sections analyse the optimal allocation of time among different activities and the value of travel time, value of reliability and value of headway when trip duration is random or deterministic. The final section provides a summary of our findings and concluding remarks.
 
@@ -162,7 +156,7 @@ The model in \eqref{eq:utility0} is similar to that of \citet{Oort1969Evaluation
 
 % The enhanced possibility to under activities in automated vehicles may decrease the dis-utility of travel.
 
-\todo[inline]{May we describe how our model compares against the scheduling model, e.g. \citet{FosgerauEngelson2011ValueTravelTime}?}
+\todo[inline]{May we describe how our model compares against the scheduling model, e.g. \citet{FosgerauEngelson2011ValueTravelTime}}
 
 
 \begin{definition}
@@ -241,12 +235,7 @@ An exogenous improvement in the productivity of in-vehicle time is beneficial wi
 \begin{equation*}
     \frac{\partial U^{\ast}}{\partial \alpha} = T U^{\prime}_m\left( t_{h}^{\ast}, t_{w}^{\ast} \right) \geq 0.
 \end{equation*}
-The gain from enhanced productivity is higher with longer travel duration as the marginal benefit spreads across more units of time. This implies that those with longer commute trips will gain more from increased automation and hence will be willing to pay more for an improvement in productivity of in-vehicle time. The the gain from productivity improvement increases with the level of productivity of in-vehicle time, .i.e, %
-\begin{equation*}
-	\frac{\partial} {\partial\alpha} \left(
-	\frac{\partial U^{\ast}} {\partial\alpha} \right) = T\left(T-\frac{\partial t_{h}^{\ast}}{\partial\alpha}-\frac{\partial t_{w}^{\ast}}{\partial\alpha}\right)U_{m}^{\prime\prime}\left(\hat{t}_{h},t_{w}^{\ast};T\right) \geq 0, 	
-\end{equation*}
-if $T-\frac{\partial t_{h}^{\ast}}{\partial\alpha}-\frac{\partial t_{w}^{\ast}}{\partial\alpha} \leq 0$. When this is the case, the commuter will be willing to pay more for increasingly more automated vehicles and other technological advances that make travel more convenient and enhance the possibility to perform useful economic or social activities.
+The gain from enhanced productivity is higher with longer travel duration as the marginal benefit spreads across longer duration. This implies that those with longer commute trips will gain more from increased automation and hence will be willing to pay more for an improvement in productivity of in-vehicle time.
 
 
 \subsubsection*{The value of travel time}
@@ -275,32 +264,28 @@ The result in the above Lemma implies that commuters with non-binding constraint
 Compared to previous literature \citep[e.g. ][]{Johnson1966TravelTimePrice,Oort1969EvaluationTravellingTime}, the value of travel time in the current paper includes a potential \textit{loss in value} as a reduction in travel time reduces the time available to productively perform activities while travelling. This was disregarded in previous studies as the possibility of productive use of in-vehicle time was ruled out. Thus, to the extent that the the dis-utility from travel is reflected in reduced productivity of in-vehicle time and the subjective value of time is accounted in $U_w$, the value of travel time in the current study would be lower than implied else the literature. Accounting for the potential productivity of in-vehicle time leads to a lower value of travel time.
 
 
-%Whether the value of travel time declines with the productivity of in-vehicle time depends on how the gain from productivity improvement changes as $\alpha \to 1$.  
-
-
-
 \begin{prop}
-The value of travel time decreases with the productivity of in-vehicle time if the gain from productivity improvement does not decline with the level of productivity of in-vehicle time, .i.e, $
-\frac{\partial} {\partial\alpha} \left(
-\frac{\partial U^{\ast}} {\partial\alpha} \right) \geq 0$.
+If a commuter has non-binding time constraint, then his or her value of travel time declines with the productivity of in-vehicle time. On the other hand, if the time constraint is binding, then the value of travel time declines with the productivity of in-vehicle time if the coefficient of relative risk aversion of $U_m$ is less than or equal to unity.
 \end{prop}
 
 
 \begin{proof}
-We want to show that
+To show this, differentiate \eqref{eq:foc_deterministic_th} and \eqref{eq:foc_deterministic_tw} with respect to $\alpha$ and manipulate to find that $\frac{\partial t_{w}^{\ast}}{\partial\alpha} , \frac{\partial t_{h}^{\ast}}{\partial\alpha} \geq 0$. If the constraint is non-binding, then $\frac{\partial t_{w}^{\ast}}{\partial\alpha}, \frac{\partial t_{w}^{\ast}}{\partial\alpha} > 0$ and $\lambda^{\ast} = 0$. Therefore,%
 \begin{equation*}
-\frac{\partial\left( - \frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha} =  U_{w}^{\prime\prime}\left(t_{w}^{\ast}\right)\frac{\partial t_{w}^{\ast}}{\partial\alpha}-U_{m}^{\prime}\left(t_{h}^{\ast},t_{w}^{\ast};T\right)-\alpha\left(T-\frac{\partial t_{h}^{\ast}}{\partial\alpha}-\frac{\partial t_{w}^{\ast}}{\partial\alpha}\right)U_{m}^{\prime\prime}\left(t^{\ast}_{h},t_{w}^{\ast};T\right) \leq 0
+\frac{\partial\left( - \frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha} = \frac{\left(1 - \alpha\right) T \, U_{h}^{\prime\prime}\left(t_{h}^{\ast}\right) U_{m}^{\prime\prime}\left(t_{h}^{\ast},t_{w}^{\ast} \right)} {U_{h}^{\prime\prime}\left(t_{h}^{\ast}\right) + U_{m}^{\prime\prime}\left(t_{h}^{\ast} t_{w}^{\ast}\right)\left(1+\frac{U_{h}^{\prime\prime}\left(t_{h}^{\ast}\right)}{U_{w}^{\prime\prime}\left(t_{w}^{\ast}\right)}\right)}-U_{m}^{\prime}\left(t_{h}^{\ast}, t_{w}^{\ast}\right) < 0
 \end{equation*}
-To see this, differentiate \eqref{eq:foc_deterministic_th} and \eqref{eq:foc_deterministic_tw} with respect to $\alpha$ and manipulate to find that $\frac{\partial t_{w}^{\ast}}{\partial\alpha} \geq 0$ and $\frac{\partial t_{h}^{\ast}} {\partial\alpha} \geq 0$. Thus, since $U_i^{\prime\prime}\left( \cdot \right) <  0 < U_i^{\prime}\left( \cdot \right)$ and $0\leq \alpha \leq 1$, the inequality holds if $\left(T-\frac{\partial t_{h}^{\ast}}{\partial\alpha}-\frac{\partial t_{w}^{\ast}}{\partial\alpha}\right) \leq 0$, which is the case when $
-\frac{\partial} {\partial\alpha} \left(
-\frac{\partial U^{\ast}} {\partial\alpha} \right) \geq 0$ as claimed.
+the inequality follows since $U_i^{\prime\prime}\left( \cdot \right) <  0 < U_i^{\prime}\left( \cdot \right)$ and $0\leq \alpha \leq 1$. If however the constraint is binding, then $\frac{\partial t_{h}^{\ast}}{\partial\alpha}=\frac{\partial t_{w}^{\ast}}{\partial\alpha} = 0$, $t_m^{\ast} = \alpha T$, $\frac{\partial t_{m}^{\ast}}{\partial\alpha}=T$ and $\frac{\partial\lambda^{\ast}}{\partial\alpha}=-TU_{m}^{\prime\prime}\left(t_{h}^{\ast}, t_{w}^{\ast}\right)$. Thus,%
+\begin{equation*}
+\frac{\partial\left(-\frac{\mathrm{d}U^{\ast}}{\mathrm{d}T}\right)}{\partial\alpha}= - U_{m}^{\prime}\left(\alpha T \right) - \alpha T U_{m}^{\prime\prime}\left(\alpha T \right) \leq 0
+\end{equation*}
+where the inequality holds if $R_m = -\frac{\alpha T U_{m}^{\prime\prime}\left(\alpha T \right)}{U_{m}^{\prime}\left(\alpha T \right)} \leq 1$
+
 \end{proof}
 
-The result in the above proposition implies that the value of reduced travel time declines with increment in the degree of automation of vehicles and advances in other technologies that make travel more convenient and enhance the usefulness of in-vehicle time. While this result has been indicated in empirical studies ({\color{red} e.g., Ducth Value of Time Study})\footnote{de Jong, G. and M. Kouwenhoven (2019), "Time Use and Values of Time and Reality in the Netherlands", International Transport Forum Discussion Papers, No. 2019/11, OECD Publishing, Paris.}, we derive the result from a behavioural model and showed that it holds in general within the framework of our model. For instance, the Ducth Value of Time Study found that increasing comfort and allowing a productive use of travel time has led to a 20\% reduction in the value of travel time for rail and public transport passengers. 
+%In general, the effect of a change in the level of productivity of in-vehicle time on the value of travel time is stated in the above proposition.
 
-%The result in the above proposition implies that commuters will be willing to pay for increasingly more automated vehicles and other technological advances that make travel more convenient and enhance the possibility to perform useful economic or social activities. While this result has been indicated in empirical studies ({\color{red} e.g., Ducth Value of Time Study}), we derive the result from a behavioural model and showed that it holds in general within the framework of our model.
+The result in the above proposition implies that commuters will be willing to pay for increasingly more automated vehicles and other technological advances that make travel more convenient and enhance the possibility to perform useful economic or social activities. While this result has been indicated in empirical studies ({\color{red} e.g., Ducth Value of Time Study}), we derive the result from a behavioural model and showed that it holds in general within the framework of our model.
 
-%If a commuter has non-binding time constraint, then his or her value of travel time declines with the productivity of in-vehicle time. On the other hand, if the time constraint is binding, then the value of travel time declines with the productivity of in-vehicle time if the gain from productivity improvement does not fall  $\alpha \to 1$, .i.e, $\frac{\partial^{2}U^{\ast}} {\partial\alpha^{2}}\geq 0$.
 
 
 \subsection{Numerical example}
@@ -346,7 +331,7 @@ where $\lambda^{\ast} \geq 0$. Whether the time constraint will be active depend
 	\begin{figure}[ht!]%
 	\centering
 	\includegraphics[scale=0.6]{plotNumericalExample02.png}
-	\caption{The value of travel time as a function of $\alpha$ for $\lambda^{\ast} = 0,\, T=0.1$}%
+	\caption{The value of travel time as a function of $\alpha$ for $T=0.1$}%
 	\label{fig:example_det}%
 	\end{figure}
 
@@ -468,27 +453,15 @@ On the other hand, if both the constraints are non-binding, then the marginal ex
 
 If the commuter has binding constraint at work but non-binding constraint at home, i.e., $\eta>0$ and $\phi=0$, then optimality requires that the expected marginal utility of time in the work-based activity be higher than that in the mobile or home-based activities. In this case, the optimal departure time can be any moment between $\hat{t}_{h}$ and $Q-\hat{t}_{w}-\mu-\sigma X$. Conversely, if the constraint at home is binding while that at work is not, the optimal departure time will coincide with the end of time assigned to the home-based activities. In this case, the expected marginal value of time devoted to the home-based activities will be higher than that allocated to the mobile or work-based activities.
 
-The optimal expected utility can be given by:
+The optimal expected utility:
 \begin{equation*}
 W\equiv E\left[U\left(\hat{t}_{h},\hat{t}_{w}; X\right)\right] = E\left[ U_{h}\left(\hat{t}_{h} \right) + U_{m}\left(\hat{t}_{h},\hat{t}_{w}; X\right) + U_{w}\left(\hat{t}_{w}\right)\right],
 \end{equation*}
-Notice that optimal choices are defined for a given value of $\alpha$ and $T$. 
+increases with the productivity of in-vehicle time, $\alpha$. Hence, as was the case with deterministic travel time, an improvement in the productivity of in-vehicle time is welfare improving.
 
+% \subsection*{Example}
 
 \subsection{Comparative statics}
-
-
-\subsubsection*{The effect of productivity enhancement}
-As was the case with deterministic travel duration, an improvement in productivity of in-vehicle time is welfare improving%
-\begin{equation*}
-	\frac{\mathrm{d}W}{\mathrm{d}\alpha}=E\left[\left(\mu+\sigma X\right)U_{m}^{\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)\right].
-\end{equation*}
-The gain from improved productivity increases with the level of productivity of in-vehicle time, i.e., 
-\begin{equation*}
-	\frac{\partial}{\partial\alpha}\left(\frac{\mathrm{d}W}{\mathrm{d}\alpha}\right)=E\left[\left(\mu+\sigma X\right)\left(\mu+\sigma X-\frac{\partial\hat{t}_{h}}{\partial\alpha}-\frac{\partial\hat{t}_{w}}{\partial\alpha}\right)U_{m}^{\prime\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)\right] \geq 0
-\end{equation*}
-if $\mu+\sigma X-\frac{\partial\hat{t}_{h}}{\partial\alpha}-\frac{\partial\hat{t}_{w}}{\partial\alpha}\leq 0$. %Similar to the case with deterministic travel times, the above condition suggests that individuals attach lower value for an improvement in productivity during the transition period than once the technology has matured.
-
 
 \subsubsection*{The value of mean travel time}
 
@@ -512,18 +485,27 @@ The value of travel time declines with an exogenous improvement in the productiv
 
 \begin{proof}
 	
-	Differentiating (\ref{eq:tw_stage}) and (\ref{eq:th_stage}) with respect to $\alpha$ and rearranging, we observe that $\frac{\partial\hat{t}_{h}}{\partial\alpha} \geq 0$ and $\frac{\partial\hat{t}_{w}}{\partial\alpha}\geq0$. Thus, since $0 \leq \alpha \leq 1$ and $U^{\prime\prime}_i < 0 < U^{\prime}_i$,  
+	Differentiating (\ref{eq:tw_stage}) and (\ref{eq:th_stage}) with respect to $\alpha$ and rearranging, we observe that $\frac{\partial\hat{t}_{h}}{\partial\alpha} \geq 0$ and $\frac{\partial\hat{t}_{w}}{\partial\alpha}\geq0$. In particular, if the constraints are non-binding, then $\frac{\partial\hat{\eta}}{\partial\alpha}=0 $ and
 	\begin{equation*}
-	\frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\mu}\right)}{\partial\alpha} = E\left[U_{w}^{\prime\prime}\left(\hat{t}_{w}\right)\frac{\partial\hat{t}_{w}}{\partial\alpha}-U_{m}^{\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)-\alpha\left(\mu+\sigma X-\frac{\partial\hat{t}_{h}}{\partial\alpha}-\frac{\partial\hat{t}_{w}}{\partial\alpha}\right)U_{m}^{\prime\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)\right] \leq 0
+	\frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\mu}\right)}{\partial\alpha} = E\left[\left(1-\alpha\right)  \left( \mu + \sigma X \right) \left(\frac{\prod_{i \in\left\{ h, m, w \right\}}U_{i}^{\prime\prime}\left(\hat{t}_{i}\right)}{\sum_{i\neq j}U_{i}^{\prime\prime}\left(\hat{t}_{i}\right)U_{j}^{\prime\prime}\left(\hat{t}_{j}\right)}\right)-U_{m}^{\prime}\left(\hat{t}_{h}, \hat{t}_{w}; X\right)\right] \leq 0
 	\end{equation*}
-	holds if $\mu + \sigma X-\frac{\partial\hat{t}_{h}}{\partial\alpha}-\frac{\partial\hat{t}_{w}}{\partial\alpha} \leq 0$, which is the case if $\frac{\partial}{ \partial\alpha } \left(\frac{\mathrm{d}W} {\mathrm{d}\alpha}\right) \geq 0$ as claimed.
+	where the inequality follows since $0 \leq \alpha \leq 1$ and $U^{\prime\prime}_i < 0 < U^{\prime}_i$.  If the constraints are binding, then $\frac{\partial\hat{t}_{h}}{\partial\alpha}=\frac{\partial\hat{t}_{w}}{\partial\alpha}=0$, $\hat{t}_{m}=\alpha \mu + \sigma X$ and $\frac{\partial\hat{\eta}}{\partial\alpha}=-(\mu+\sigma X) U_{m}^{\prime\prime}\left(\alpha (\mu+\sigma X) \right)$. Therefore,
+	\begin{equation*}
+	\frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d} \mu}\right)}{\partial\alpha}= E\left[-\alpha (\mu + \sigma X) U_{m}^{\prime\prime}\left(\alpha (\mu+\sigma X) \right)-U_{m}^{\prime}\left(\alpha (\mu+\sigma X) \right)\right] \leq 0
+	\end{equation*}
+	if $\frac{-\alpha (\mu+\sigma X) U_m^{\prime\prime} \left(\alpha (\mu+\sigma X)\right)}{U_m^{\prime\prime} \left(\alpha (\mu+\sigma X)\right)} \leq 1$ as claimed.\footnote{\color{red}Alternatively, 
+		\begin{equation*}
+			\frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\mu}\right)}{\partial\alpha}=E\left[U_{w}^{\prime\prime}\left(\hat{t}_{w}\right)\frac{\partial\hat{t}_{w}}{\partial\alpha}-U_{m}^{\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)-\alpha\left(\mu+\sigma X-\frac{\partial\hat{t}_{h}}{\partial\alpha}-\frac{\partial\hat{t}_{w}}{\partial\alpha}\right)U_{m}^{\prime\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)\right]
+		\end{equation*}
+		Thus,  $\frac{\partial\left( -\frac{\mathrm{d}W} {\mathrm{d}\mu}\right)} {\partial\alpha} \leq 0$ if $ E\left[-U_{m}^{\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)-\alpha\left(\mu+\sigma X\right)U_{m}^{\prime\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)\right] \leq 0$ or $-\frac{\alpha\left(\mu+\sigma X\right)U_{m}^{\prime\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)}{U_{m}^{\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)} \leq 1$
+	}
 
 \end{proof}
 
 
-Similar to the case with deterministic travel time, the result stated in the above proposition implies that lower value is  attached to reduced travel time as productivity enhancing technologies continue to improve.   
+As was the case with deterministic travel duration, the result stated in the above proposition implies that lower value is  attached to reduced travel time as productivity enhancing technologies continue to improve. As was the case with deterministic travel duration, the result stated in the above proposition implies individuals attach more value for an improvement in productivity enhancing technologies during the transition period than once the technology is matured.  
 
-%As was the case with deterministic travel duration, the result stated in the above proposition implies individuals attach more value for an improvement in productivity enhancing technologies during the transition period than once the technology is matured.  
+As was the case with deterministic travel duration, the result stated in the above proposition implies individuals attach more value for an improvement in productivity enhancing technologies during the transition period than once the technology is matured.  
 
 
 \subsubsection*{The value of reliability}
@@ -554,35 +536,31 @@ Noting that $E\left[X\right]=0$ such that $E\left[X \vert X \leq 0 \right] = -E\
 where the inequality follows since $v_{1}\geq v_{2}$ and $E\left[X\vert X>0\right] > 0$. Therefore, the value of reliability is non-negative.
 \end{proof}
 
-Notice that the value of reliability equals the weighted mean of gains from undertaking the mobile activity at work instead of while travelling. Thus, if in-vehicle time is as productive as time at work, i.e., $\alpha=1$, then the commuter does not gain by using the reduced travel time to carry out the mobile activity at work. Hence, the value of reliability will be zero if in-vehicle time is fully productive. This is a new insight compared to previous literature \citep[e.g. ][]{Small1982SchedulingConsumerActivities,FosgerauEngelson2011ValueTravelTime,FosgerauKarlstroem2010ValueReliability} who ... 
+Notice that the value of reliability equals the weighted mean of gains from undertaking the mobile activity at work instead of while travelling. Thus, if in-vehicle time is as productive as time at work, i.e., $\alpha=1$, then the commuter does not gain by using the reduced travel time to carry out the mobile activity at work. Hence, the value of reliability will be zero if in-vehicle time is fully productive. This is new compared to previous literature \citep{Small1982SchedulingConsumerActivities,FosgerauEngelson2011ValueTravelTime,FosgerauKarlstroem2010ValueReliability} who
 
 
 \todo[inline]{Compare the value of reliability in our model against that in \citet{FosgerauEngelson2011ValueTravelTime}, where $ \beta, \gamma <0 $ shall be assumed so their result can be comparable to ours}
 
-\todo[inline]{Note: It proved to be difficult to come up with a meaningful conditon under which the following inequality holds.}
+\todo[inline]{Note: The following need revision as it does not hold in general, and it proved to be difficult to come up with a conditon that ensures the inequality holds}
 
 \begin{prop}
-The value of reliability declines with an exogenous increase in the productivity of in-vehicle time provided that {\color{red} specify meaningful conditions}.
+	WRONG !!!
+The value of reliability declines with an exogenous increase in the productivity of in-vehicle time provided that both constraints are binding or non-binding.
 \end{prop}
 
 \begin{proof}
-In general, we have
-\begin{equation*}
-	\frac{\partial}{\partial\alpha}\left(-\frac{\mathrm{d}W}{\mathrm{d}\sigma}\right)=E\left[\left(\left(1-\alpha\right)\left(\mu+\sigma X-\frac{\partial\hat{t}_{h}}{\partial\alpha}-\frac{\partial\hat{t}_{w}}{\partial\alpha}\right)U_{m}^{\prime\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)-U_{m}^{\prime}\left(\hat{t}_{h},\hat{t}_{w};X\right)\right)X\right].	
-\end{equation*}
-
 If both constraints are non-binding, then $\hat{\eta}=\hat{\phi}=0$ and hence
 \begin{align*}
-\frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\sigma}\right)}{\partial\alpha} &= E\left[\left(\left(1-\alpha\right)\left(\mu+\sigma X\right) \frac{\prod_{i \in \left\{ h,w,m\right\}  }U_{i}^{\prime\prime}\left(\hat{t}_{i}\right)}{\sum_{i\neq j}U_{i}^{\prime\prime}\left(\hat{t}_{i}\right)U_{j}^{\prime\prime}\left(\hat{t}_{j}\right)}-U_{m}^{\prime}\left(\hat{t}_{m}\right)\right)X\right] 
+\frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\sigma}\right)}{\partial\alpha} &= E\left[\left(\left(1-\alpha\right)\left(\mu+\sigma X\right) \frac{\prod_{i \in \left\{ h,w,m\right\}  }U_{i}^{\prime\prime}\left(\hat{t}_{i}\right)}{\sum_{i\neq j}U_{i}^{\prime\prime}\left(\hat{t}_{i}\right)U_{j}^{\prime\prime}\left(\hat{t}_{j}\right)}-U_{m}^{\prime}\left(\hat{t}_{m}\right)\right)X\right] \leq 0
 \end{align*}
-Note that the expression in parenthesis that multiply the outer $X$ is negative. If both constraints are binding, then $\frac{\partial\hat{t}_{h}}{\partial\alpha}=\frac{\partial\hat{t}_{w}}{\partial\alpha}=0$, and hence $\frac{\partial\hat{t}_{m}}{\partial\alpha}=\mu+\sigma X$ and
+where the inequality follows since the expression in parenthesis is negative. If the constraints are binding, then $\frac{\partial\hat{t}_{h}}{\partial\alpha}=\frac{\partial\hat{t}_{w}}{\partial\alpha}=0$, and hence $\frac{\partial\hat{t}_{m}}{\partial\alpha}=\mu+\sigma X$ and
 \begin{equation*}
 \frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\sigma}\right)}{\partial\alpha}=E\left[\left(\left(1-\alpha\right)\left(\mu+\sigma X\right)U_{m}^{\prime\prime}\left(\hat{t}_{m}\right)-U_{m}^{\prime}\left(\hat{t}_{m}\right)\right)X\right] \leq 0.
 \end{equation*}
-Therefore, $\frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\sigma}\right)}{\partial\alpha} \leq 0 $ if ... .
+Therefore, $\frac{\partial\left(-\frac{\mathrm{d}W}{\mathrm{d}\sigma}\right)}{\partial\alpha} \leq 0 $ irrespective of whether the constraints are binding.
 \end{proof}
 
-%An increase in the productivity of in-vehicle time reduces the $\left(1-\alpha\right)$ and hence also the value of reliability, but its effect through $t_{m}$ depends on if and how much the optimal allocation of time changes due to a change in $\alpha$. With binding time constraints at both ends of the trip, $\frac{\partial t_{m}}{\partial\alpha}=\mu+\sigma X>0$ since the time optimally allocated to the home-based and work-based activities will remain unchanged. Thus, the value of reliability declines with the productivity of in-vehicle time irrespective of the value of $\frac{\partial t_{m}}{\partial\alpha}$. However, when one or both constraints are inactive, a change in productivity of in-vehicle time also affects the value of reliability through its effect on the optimal allocation of time. Accordingly, an increase in $\alpha$ increases $t_{h}$ or $t_{w}$ or both. As a result, the value of reliability declines with the productivity of in-vehicle time only if the sum of the change in time devoted to the home-based and work-based activities does not exceed the travel time, i.e., $\frac{\partial\hat{t}_{h}}{\partial\alpha}+\frac{\partial\hat{t}_{w}}{\partial\alpha}\leq\mu+\sigma X$.
+An increase in the productivity of in-vehicle time reduces the $\left(1-\alpha\right)$ and hence also the value of reliability, but its effect through $t_{m}$ depends on if and how much the optimal allocation of time changes due to a change in $\alpha$. With binding time constraints at both ends of the trip, $\frac{\partial t_{m}}{\partial\alpha}=\mu+\sigma X>0$ since the time optimally allocated to the home-based and work-based activities will remain unchanged. Thus, the value of reliability declines with the productivity of in-vehicle time irrespective of the value of $\frac{\partial t_{m}}{\partial\alpha}$. However, when one or both constraints are inactive, a change in productivity of in-vehicle time also affects the value of reliability through its effect on the optimal allocation of time. Accordingly, an increase in $\alpha$ increases $t_{h}$ or $t_{w}$ or both. As a result, the value of reliability declines with the productivity of in-vehicle time only if the sum of the change in time devoted to the home-based and work-based activities does not exceed the travel time, i.e., $\frac{\partial\hat{t}_{h}}{\partial\alpha}+\frac{\partial\hat{t}_{w}}{\partial\alpha}\leq\mu+\sigma X$.
 
 
 \section{Conclusion and policy implications}
